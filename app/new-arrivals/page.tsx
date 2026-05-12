@@ -1,662 +1,226 @@
 "use client";
 
 import Image from "next/image";
-
-import Link from "next/link";
-
+import { motion } from "framer-motion";
 import {
-  motion,
-} from "framer-motion";
-
-import {
+  ShoppingBag,
+  Heart,
+  Star,
+  Crown,
   Sparkles,
   ArrowRight,
-  ShoppingBag,
-  Star,
-  Heart,
-  Crown,
-  Flame,
-  Gem,
-  Shirt,
-  Footprints,
-  Watch,
-  Filter,
-  SlidersHorizontal,
-  Truck,
-  ShieldCheck,
-  BadgeCheck,
 } from "lucide-react";
 
-const categories = [
-  {
-    title: "Luxury Fashion",
-    image: "/women/women.jpg",
-    icon: Crown,
-  },
+const heroImages = [
+  "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=2000&auto=format&fit=crop",
+];
 
+const collections = [
   {
-    title: "Streetwear",
-    image: "/men/men.jpg",
-    icon: Flame,
+    title: "Luxury Menswear",
+    image:
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
   },
-
   {
-    title: "Accessories",
-    image: "/children/children.jpg",
-    icon: Gem,
+    title: "Street Fashion",
+    image:
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    title: "Premium Style",
+    image:
+      "https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
 const products = [
   {
-    name: "Premium Leather Jacket",
-    category: "Luxury Men",
-    price: "$299",
-    image: "/men/men.jpg",
+    name: "Black Luxury Jacket",
+    price: "₹12,999",
+    image:
+      "https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200&auto=format&fit=crop",
   },
-
   {
-    name: "Designer Fashion Dress",
-    category: "Luxury Women",
-    price: "$349",
-    image: "/women/women.jpg",
+    name: "Modern Street Hoodie",
+    price: "₹5,499",
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop",
   },
-
   {
-    name: "Urban Street Sneakers",
-    category: "Streetwear",
-    price: "$199",
-    image: "/men/men.jpg",
+    name: "Premium Oversized Tee",
+    price: "₹2,999",
+    image:
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop",
   },
-
   {
-    name: "Luxury Watch Collection",
-    category: "Accessories",
-    price: "$599",
-    image: "/women/women.jpg",
+    name: "Elite Fashion Suit",
+    price: "₹18,999",
+    image:
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
   },
-
   {
-    name: "Premium Kids Collection",
-    category: "Children",
-    price: "$149",
-    image: "/children/children.jpg",
+    name: "Urban Black Coat",
+    price: "₹14,999",
+    image:
+      "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?q=80&w=1200&auto=format&fit=crop",
   },
-
   {
-    name: "Exclusive Fashion Hoodie",
-    category: "Streetwear",
-    price: "$189",
-    image: "/men/men.jpg",
+    name: "Premium Denim Style",
+    price: "₹6,999",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
-const stats = [
-  {
-    number: "500+",
-    label: "New Products",
-  },
-
-  {
-    number: "120+",
-    label: "Luxury Brands",
-  },
-
-  {
-    number: "24H",
-    label: "Fast Delivery",
-  },
-
-  {
-    number: "4.9★",
-    label: "Premium Rating",
-  },
-];
-
-export default function NewArrivalsPage() {
+export default function MensFashionPage() {
   return (
-    <main className="relative overflow-hidden bg-black text-white">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* GRID */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+    <main className="bg-black text-white overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen">
+        <div className="absolute inset-0">
+          <Image
+            src={heroImages[0]}
+            alt="Men Fashion"
+            fill
+            priority
+            className="object-cover opacity-40"
+          />
+        </div>
 
-            backgroundSize: "80px 80px",
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black" />
 
-        {/* GLOW */}
-        <div className="absolute left-0 top-0 h-[700px] w-[700px] rounded-full bg-pink-500/10 blur-[180px]" />
-
-        <div className="absolute right-0 top-20 h-[700px] w-[700px] rounded-full bg-cyan-500/10 blur-[180px]" />
-
-        <div className="absolute bottom-0 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-purple-500/10 blur-[180px]" />
-      </div>
-
-      {/* HERO */}
-      <section className="relative px-6 pb-20 pt-[160px] lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          {/* TOP */}
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 lg:px-10">
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
-            className="max-w-4xl"
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
-            {/* BADGE */}
-            <div
-              className="
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                border
-                border-white/10
-                bg-white/[0.03]
-                px-6
-                py-3
-                backdrop-blur-2xl
-              "
-            >
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-6 py-3 backdrop-blur-xl">
               <Sparkles size={16} />
-
-              <span
-                className="
-                  text-xs
-                  uppercase
-                  tracking-[0.3em]
-                  text-zinc-400
-                "
-              >
-                New Fashion Collection
+              <span className="text-xs uppercase tracking-[0.4em]">
+                Premium Men Collection
               </span>
             </div>
 
-            {/* TITLE */}
-            <h1
-              className="
-                mt-10
-                text-6xl
-                font-black
-                leading-[0.95]
-                md:text-8xl
-                xl:text-[9rem]
-              "
-            >
-              NEW
-              <span
-                className="
-                  block
-                  bg-gradient-to-r
-                  from-white
-                  via-zinc-300
-                  to-zinc-500
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                ARRIVALS
+            <h1 className="mt-10 text-7xl font-black leading-none md:text-9xl">
+              MEN
+              <span className="block bg-gradient-to-r from-white via-zinc-400 to-zinc-700 bg-clip-text text-transparent">
+                FASHION
               </span>
             </h1>
 
-            {/* DESCRIPTION */}
-            <p
-              className="
-                mt-10
-                max-w-3xl
-                text-lg
-                leading-9
-                text-zinc-400
-                md:text-xl
-              "
-            >
-              Discover futuristic luxury fashion, premium
-              streetwear and exclusive designer collections
-              crafted for the next generation of style.
-            </p>
-
-            {/* BUTTONS */}
-            <div className="mt-12 flex flex-col gap-5 sm:flex-row">
-              <button
-                className="
-                  flex
-                  items-center
-                  justify-center
-                  gap-4
-                  rounded-full
-                  bg-white
-                  px-8
-                  py-5
-                  text-sm
-                  font-bold
-                  uppercase
-                  tracking-[0.2em]
-                  text-black
-                "
-              >
-                Explore Collection
+            <div className="mt-12 flex flex-wrap gap-6">
+              <button className="flex items-center gap-3 rounded-full bg-white px-8 py-5 text-sm font-bold uppercase tracking-[0.2em] text-black">
+                Shop Now
                 <ArrowRight size={18} />
               </button>
 
-              <button
-                className="
-                  flex
-                  items-center
-                  justify-center
-                  gap-4
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-white/[0.04]
-                  px-8
-                  py-5
-                  text-sm
-                  font-bold
-                  uppercase
-                  tracking-[0.2em]
-                  backdrop-blur-xl
-                "
-              >
-                <ShoppingBag size={18} />
-                Shop Now
+              <button className="rounded-full border border-white/20 bg-white/10 px-8 py-5 text-sm uppercase tracking-[0.2em] backdrop-blur-xl">
+                New Arrival
               </button>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* STATS */}
-          <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {stats.map((item, index) => (
+      {/* COLLECTION SECTION */}
+      <section className="px-6 py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16">
+            <h2 className="text-5xl font-black md:text-7xl">
+              TRENDING
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {collections.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  delay: index * 0.1,
-                }}
-                className="
-                  rounded-[34px]
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  p-8
-                  backdrop-blur-2xl
-                "
+                whileHover={{ y: -10 }}
+                className="group relative overflow-hidden rounded-[40px] border border-white/10"
               >
-                <h3 className="text-5xl font-black">
-                  {item.number}
-                </h3>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={900}
+                  height={1200}
+                  className="h-[700px] w-full object-cover transition duration-700 group-hover:scale-110"
+                />
 
-                <p className="mt-4 text-zinc-400">
-                  {item.label}
-                </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                <div className="absolute bottom-10 left-10">
+                  <h3 className="text-4xl font-black">
+                    {item.title}
+                  </h3>
+
+                  <button className="mt-6 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm uppercase tracking-[0.2em] backdrop-blur-xl">
+                    Explore
+                  </button>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CATEGORIES */}
-      <section className="relative px-6 py-20 lg:px-10">
+      {/* PRODUCTS */}
+      <section className="px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          {/* TITLE */}
-          <div className="mb-16 flex items-end justify-between">
-            <div>
-              <p
-                className="
-                  text-xs
-                  uppercase
-                  tracking-[0.4em]
-                  text-zinc-500
-                "
-              >
-                Categories
-              </p>
+          <div className="mb-16 flex items-center justify-between">
+            <h2 className="text-5xl font-black md:text-7xl">
+              PRODUCTS
+            </h2>
 
-              <h2 className="mt-5 text-5xl font-black md:text-7xl">
-                Trending Styles
-              </h2>
-            </div>
-
-            <button
-              className="
-                hidden
-                items-center
-                gap-3
-                rounded-full
-                border
-                border-white/10
-                bg-white/[0.04]
-                px-6
-                py-4
-                text-sm
-                uppercase
-                tracking-[0.2em]
-                lg:flex
-              "
-            >
-              <SlidersHorizontal size={18} />
-              Filter
+            <button className="rounded-full border border-white/10 bg-white/10 px-6 py-3 text-sm uppercase tracking-[0.2em]">
+              View All
             </button>
           </div>
 
-          {/* GRID */}
-          <div className="grid gap-8 md:grid-cols-3">
-            {categories.map((category, index) => {
-              const Icon = category.icon;
-
-              return (
-                <motion.div
-                  key={index}
-                  whileHover={{
-                    y: -8,
-                  }}
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-[40px]
-                    border
-                    border-white/10
-                  "
-                >
-                  <Image
-                    src={category.image}
-                    alt={category.title}
-                    width={800}
-                    height={1000}
-                    className="
-                      h-[550px]
-                      w-full
-                      object-cover
-                      transition-all
-                      duration-700
-                      group-hover:scale-110
-                    "
-                  />
-
-                  {/* OVERLAY */}
-                  <div
-                    className="
-                      absolute
-                      inset-0
-                      bg-gradient-to-t
-                      from-black
-                      via-black/20
-                      to-transparent
-                    "
-                  />
-
-                  {/* CONTENT */}
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <div
-                      className="
-                        flex
-                        h-16
-                        w-16
-                        items-center
-                        justify-center
-                        rounded-3xl
-                        bg-white
-                        text-black
-                      "
-                    >
-                      <Icon size={28} />
-                    </div>
-
-                    <h3 className="mt-6 text-4xl font-black">
-                      {category.title}
-                    </h3>
-
-                    <button
-                      className="
-                        mt-6
-                        flex
-                        items-center
-                        gap-3
-                        rounded-full
-                        border
-                        border-white/10
-                        bg-white/[0.05]
-                        px-6
-                        py-3
-                        text-sm
-                        uppercase
-                        tracking-[0.2em]
-                        backdrop-blur-xl
-                      "
-                    >
-                      Explore
-                      <ArrowRight size={16} />
-                    </button>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCTS */}
-      <section className="relative px-6 py-20 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          {/* HEADER */}
-          <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p
-                className="
-                  text-xs
-                  uppercase
-                  tracking-[0.4em]
-                  text-zinc-500
-                "
-              >
-                Latest Collection
-              </p>
-
-              <h2 className="mt-5 text-5xl font-black md:text-7xl">
-                Premium Products
-              </h2>
-            </div>
-
-            {/* FILTERS */}
-            <div className="flex flex-wrap gap-4">
-              {[
-                "All",
-                "Luxury",
-                "Streetwear",
-                "Accessories",
-                "Trending",
-              ].map((item) => (
-                <button
-                  key={item}
-                  className="
-                    rounded-full
-                    border
-                    border-white/10
-                    bg-white/[0.04]
-                    px-6
-                    py-3
-                    text-sm
-                    uppercase
-                    tracking-[0.2em]
-                    transition-all
-                    hover:bg-white
-                    hover:text-black
-                  "
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* PRODUCTS GRID */}
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {products.map((product, index) => (
               <motion.div
                 key={index}
-                whileHover={{
-                  y: -8,
-                }}
-                className="
-                  group
-                  overflow-hidden
-                  rounded-[40px]
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  backdrop-blur-2xl
-                "
+                whileHover={{ y: -10 }}
+                className="group overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.03]"
               >
-                {/* IMAGE */}
                 <div className="relative overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     width={800}
                     height={1000}
-                    className="
-                      h-[450px]
-                      w-full
-                      object-cover
-                      transition-all
-                      duration-700
-                      group-hover:scale-110
-                    "
+                    className="h-[550px] w-full object-cover transition duration-700 group-hover:scale-110"
                   />
 
-                  {/* TOP */}
-                  <div className="absolute left-6 top-6 flex items-center gap-3">
-                    <div
-                      className="
-                        rounded-full
-                        border
-                        border-white/10
-                        bg-black/40
-                        px-4
-                        py-2
-                        text-xs
-                        uppercase
-                        tracking-[0.2em]
-                        backdrop-blur-xl
-                      "
-                    >
-                      New
-                    </div>
-
-                    <div
-                      className="
-                        rounded-full
-                        border
-                        border-white/10
-                        bg-black/40
-                        px-4
-                        py-2
-                        text-xs
-                        uppercase
-                        tracking-[0.2em]
-                        backdrop-blur-xl
-                      "
-                    >
-                      Trending
-                    </div>
-                  </div>
-
-                  {/* WISHLIST */}
-                  <button
-                    className="
-                      absolute
-                      right-6
-                      top-6
-                      flex
-                      h-12
-                      w-12
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-white/10
-                      bg-black/40
-                      backdrop-blur-xl
-                    "
-                  >
+                  <button className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-black/40 backdrop-blur-xl">
                     <Heart size={18} />
                   </button>
                 </div>
 
-                {/* CONTENT */}
                 <div className="p-8">
-                  {/* CATEGORY */}
-                  <p
-                    className="
-                      text-xs
-                      uppercase
-                      tracking-[0.3em]
-                      text-zinc-500
-                    "
-                  >
-                    {product.category}
-                  </p>
-
-                  {/* TITLE */}
-                  <h3 className="mt-4 text-3xl font-black">
+                  <h3 className="text-3xl font-black">
                     {product.name}
                   </h3>
 
-                  {/* RATING */}
                   <div className="mt-5 flex items-center gap-2">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star
                         key={star}
                         size={16}
-                        className="
-                          fill-yellow-400
-                          text-yellow-400
-                        "
+                        className="fill-yellow-400 text-yellow-400"
                       />
                     ))}
-
-                    <span className="ml-2 text-sm text-zinc-400">
-                      4.9 Rating
-                    </span>
                   </div>
 
-                  {/* PRICE */}
                   <div className="mt-8 flex items-center justify-between">
                     <h4 className="text-4xl font-black">
                       {product.price}
                     </h4>
 
-                    <button
-                      className="
-                        flex
-                        h-14
-                        w-14
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-white
-                        text-black
-                      "
-                    >
+                    <button className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-black">
                       <ShoppingBag size={20} />
                     </button>
                   </div>
@@ -667,179 +231,38 @@ export default function NewArrivalsPage() {
         </div>
       </section>
 
-      {/* PREMIUM BANNER */}
-      <section className="relative px-6 py-24 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <div
-            className="
-              relative
-              overflow-hidden
-              rounded-[60px]
-              border
-              border-white/10
-              bg-white/[0.03]
-              p-10
-              backdrop-blur-3xl
-              lg:p-20
-            "
-          >
-            {/* GLOW */}
-            <div className="absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-white/5 blur-[120px]" />
+      {/* BIG BANNER */}
+      <section className="px-6 py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[50px] border border-white/10">
+          <div className="relative h-[800px]">
+            <Image
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2200&auto=format&fit=crop"
+              alt="Luxury Men"
+              fill
+              className="object-cover"
+            />
 
-            <div className="grid items-center gap-20 lg:grid-cols-2">
-              {/* LEFT */}
-              <div>
-                <div
-                  className="
-                    inline-flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    px-5
-                    py-3
-                  "
-                >
-                  <Crown size={16} />
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
 
-                  <span
-                    className="
-                      text-xs
-                      uppercase
-                      tracking-[0.3em]
-                      text-zinc-400
-                    "
-                  >
-                    Premium Experience
-                  </span>
-                </div>
-
-                <h2
-                  className="
-                    mt-10
-                    text-5xl
-                    font-black
-                    leading-tight
-                    md:text-7xl
-                  "
-                >
-                  The Future
-                  <span
-                    className="
-                      block
-                      bg-gradient-to-r
-                      from-white
-                      via-zinc-300
-                      to-zinc-500
-                      bg-clip-text
-                      text-transparent
-                    "
-                  >
-                    Of Fashion
-                  </span>
-                </h2>
-
-                <p
-                  className="
-                    mt-8
-                    max-w-2xl
-                    text-lg
-                    leading-9
-                    text-zinc-400
-                  "
-                >
-                  Discover futuristic shopping experiences,
-                  luxury collections and premium digital
-                  fashion crafted for the next generation.
-                </p>
-
-                <button
-                  className="
-                    mt-10
-                    flex
-                    items-center
-                    gap-4
-                    rounded-full
-                    bg-white
-                    px-8
-                    py-5
-                    text-sm
-                    font-bold
-                    uppercase
-                    tracking-[0.2em]
-                    text-black
-                  "
-                >
-                  Explore Premium
-                  <ArrowRight size={18} />
-                </button>
+            <div className="absolute left-10 top-1/2 max-w-3xl -translate-y-1/2">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-3 backdrop-blur-xl">
+                <Crown size={16} />
+                <span className="text-xs uppercase tracking-[0.3em]">
+                  Luxury Collection
+                </span>
               </div>
 
-              {/* RIGHT */}
-              <div className="grid gap-6 sm:grid-cols-2">
-                {[
-                  {
-                    icon: Truck,
-                    title: "Fast Delivery",
-                  },
+              <h2 className="mt-10 text-6xl font-black leading-tight md:text-8xl">
+                MODERN
+                <span className="block text-zinc-400">
+                  MENSWEAR
+                </span>
+              </h2>
 
-                  {
-                    icon: ShieldCheck,
-                    title: "Secure Checkout",
-                  },
-
-                  {
-                    icon: BadgeCheck,
-                    title: "Premium Quality",
-                  },
-
-                  {
-                    icon: Sparkles,
-                    title: "Luxury Experience",
-                  },
-                ].map((item, index) => {
-                  const Icon = item.icon;
-
-                  return (
-                    <div
-                      key={index}
-                      className="
-                        rounded-[34px]
-                        border
-                        border-white/10
-                        bg-white/[0.04]
-                        p-8
-                      "
-                    >
-                      <div
-                        className="
-                          flex
-                          h-16
-                          w-16
-                          items-center
-                          justify-center
-                          rounded-3xl
-                          bg-white
-                          text-black
-                        "
-                      >
-                        <Icon size={28} />
-                      </div>
-
-                      <h3 className="mt-6 text-2xl font-black">
-                        {item.title}
-                      </h3>
-
-                      <p className="mt-4 text-zinc-400">
-                        Premium shopping experience for
-                        modern fashion customers.
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
+              <button className="mt-10 flex items-center gap-4 rounded-full bg-white px-8 py-5 text-sm font-bold uppercase tracking-[0.2em] text-black">
+                Explore Style
+                <ArrowRight size={18} />
+              </button>
             </div>
           </div>
         </div>
