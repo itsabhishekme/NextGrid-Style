@@ -10,7 +10,6 @@ import {
   X,
   User,
   ChevronDown,
-  Sparkles,
   Bell,
   ArrowRight,
 } from "lucide-react";
@@ -20,36 +19,31 @@ import {
   AnimatePresence,
 } from "framer-motion";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   {
     name: "Men",
     href: "/men",
   },
-
   {
     name: "Women",
     href: "/women",
   },
-
   {
     name: "Children",
     href: "/children",
   },
-
   {
     name: "New Arrivals",
     href: "/new-arrivals",
     badge: true,
   },
-
   {
     name: "Luxury",
     href: "/luxury",
     dropdown: true,
   },
-
   {
     name: "Streetwear",
     href: "/streetwear",
@@ -61,17 +55,14 @@ const luxuryDropdown = [
     title: "Premium Jackets",
     href: "/luxury/jackets",
   },
-
   {
     title: "Designer Shoes",
     href: "/luxury/shoes",
   },
-
   {
     title: "Luxury Watches",
     href: "/luxury/watches",
   },
-
   {
     title: "Accessories",
     href: "/luxury/accessories",
@@ -88,12 +79,29 @@ export default function Navbar() {
   const [luxuryOpen, setLuxuryOpen] =
     useState(false);
 
+  const [searchQuery, setSearchQuery] =
+    useState("");
+
+  useEffect(() => {
+    if (mobileMenu || searchOpen) {
+      document.body.style.overflow =
+        "hidden";
+    } else {
+      document.body.style.overflow =
+        "auto";
+    }
+
+    return () => {
+      document.body.style.overflow =
+        "auto";
+    };
+  }, [mobileMenu, searchOpen]);
+
   return (
     <>
-      {/* NAVBAR */}
       <motion.header
         initial={{
-          y: -100,
+          y: -80,
           opacity: 0,
         }}
         animate={{
@@ -101,7 +109,7 @@ export default function Navbar() {
           opacity: 1,
         }}
         transition={{
-          duration: 0.8,
+          duration: 0.6,
         }}
         className="
           fixed
@@ -119,16 +127,18 @@ export default function Navbar() {
           className="
             mx-auto
             flex
-            h-[90px]
+            h-[82px]
             max-w-7xl
             items-center
             justify-between
-            px-6
+            px-4
+            sm:px-6
             lg:px-10
           "
         >
           {/* LEFT */}
-          <div className="flex items-center gap-14">
+          <div className="flex items-center gap-5 lg:gap-14">
+
             {/* LOGO */}
             <Link href="/">
               <motion.div
@@ -144,10 +154,12 @@ export default function Navbar() {
                     via-zinc-300
                     to-zinc-500
                     bg-clip-text
-                    text-3xl
+                    text-xl
+                    sm:text-2xl
+                    lg:text-3xl
                     font-black
                     uppercase
-                    tracking-[0.3em]
+                    tracking-[0.28em]
                     text-transparent
                   "
                 >
@@ -157,9 +169,11 @@ export default function Navbar() {
                 <p
                   className="
                     mt-1
-                    text-[10px]
+                    hidden
+                    sm:block
+                    text-[9px]
                     uppercase
-                    tracking-[0.5em]
+                    tracking-[0.45em]
                     text-zinc-500
                   "
                 >
@@ -273,11 +287,12 @@ export default function Navbar() {
                             top-12
                             w-[320px]
                             overflow-hidden
-                            rounded-[30px]
+                            rounded-[32px]
                             border
                             border-white/10
-                            bg-black/90
+                            bg-black/95
                             p-6
+                            shadow-2xl
                             backdrop-blur-3xl
                           "
                         >
@@ -293,7 +308,7 @@ export default function Navbar() {
                               Premium Collection
                             </p>
 
-                            <h3 className="mt-3 text-2xl font-black">
+                            <h3 className="mt-3 text-2xl font-black text-white">
                               Luxury Fashion
                             </h3>
                           </div>
@@ -340,7 +355,8 @@ export default function Navbar() {
           </div>
 
           {/* RIGHT */}
-          <div className="flex items-center gap-3 lg:gap-5">
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-5">
+
             {/* SEARCH */}
             <motion.button
               whileHover={{
@@ -353,10 +369,11 @@ export default function Navbar() {
                 setSearchOpen(true)
               }
               className="
-                hidden
-                md:flex
-                h-11
-                w-11
+                flex
+                h-10
+                w-10
+                sm:h-11
+                sm:w-11
                 items-center
                 justify-center
                 rounded-full
@@ -370,7 +387,7 @@ export default function Navbar() {
               <Search size={18} />
             </motion.button>
 
-            {/* NOTIFICATIONS */}
+            {/* NOTIFICATION */}
             <Link href="/notifications">
               <motion.button
                 whileHover={{
@@ -391,8 +408,6 @@ export default function Navbar() {
                   border
                   border-white/10
                   bg-white/5
-                  transition-all
-                  hover:bg-white/10
                 "
               >
                 <Bell size={18} />
@@ -411,6 +426,7 @@ export default function Navbar() {
                     bg-red-500
                     text-[10px]
                     font-bold
+                    text-white
                   "
                 >
                   3
@@ -439,8 +455,6 @@ export default function Navbar() {
                   border
                   border-white/10
                   bg-white/5
-                  transition-all
-                  hover:bg-white/10
                 "
               >
                 <Heart size={18} />
@@ -467,7 +481,7 @@ export default function Navbar() {
               </motion.button>
             </Link>
 
-            {/* LOGIN / PROFILE */}
+            {/* PROFILE */}
             <Link href="/login">
               <motion.button
                 whileHover={{
@@ -487,8 +501,6 @@ export default function Navbar() {
                   border
                   border-white/10
                   bg-white/5
-                  transition-all
-                  hover:bg-white/10
                 "
               >
                 <User size={18} />
@@ -507,8 +519,10 @@ export default function Navbar() {
                 className="
                   relative
                   flex
-                  h-12
-                  w-12
+                  h-11
+                  w-11
+                  sm:h-12
+                  sm:w-12
                   items-center
                   justify-center
                   rounded-full
@@ -541,7 +555,7 @@ export default function Navbar() {
               </motion.button>
             </Link>
 
-            {/* MOBILE MENU */}
+            {/* MOBILE MENU BUTTON */}
             <motion.button
               whileTap={{
                 scale: 0.9,
@@ -551,8 +565,10 @@ export default function Navbar() {
               }
               className="
                 flex
-                h-11
-                w-11
+                h-10
+                w-10
+                sm:h-11
+                sm:w-11
                 items-center
                 justify-center
                 rounded-full
@@ -571,6 +587,293 @@ export default function Navbar() {
           </div>
         </nav>
       </motion.header>
+
+      {/* SEARCH MODAL */}
+      <AnimatePresence>
+        {searchOpen && (
+          <>
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+              onClick={() =>
+                setSearchOpen(false)
+              }
+              className="
+                fixed
+                inset-0
+                z-[90]
+                bg-black/70
+                backdrop-blur-xl
+              "
+            />
+
+            <motion.div
+              initial={{
+                y: -40,
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              exit={{
+                y: -40,
+                opacity: 0,
+              }}
+              className="
+                fixed
+                left-1/2
+                top-24
+                z-[100]
+                w-[95%]
+                max-w-2xl
+                -translate-x-1/2
+                rounded-[32px]
+                border
+                border-white/10
+                bg-zinc-950
+                p-5
+                shadow-2xl
+              "
+            >
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-3
+                "
+              >
+                <Search
+                  size={20}
+                  className="text-zinc-500"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Search luxury fashion..."
+                  value={searchQuery}
+                  onChange={(e) =>
+                    setSearchQuery(
+                      e.target.value
+                    )
+                  }
+                  className="
+                    h-14
+                    w-full
+                    bg-transparent
+                    text-white
+                    outline-none
+                    placeholder:text-zinc-500
+                  "
+                />
+
+                <button
+                  onClick={() =>
+                    setSearchOpen(false)
+                  }
+                  className="
+                    flex
+                    h-11
+                    w-11
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-white
+                    text-black
+                  "
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              {/* SEARCH BUTTON */}
+              <Link
+                href={`/search?q=${searchQuery}`}
+                className="
+                  mt-5
+                  flex
+                  h-12
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-white
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.2em]
+                  text-black
+                  transition-all
+                  hover:scale-[1.01]
+                "
+              >
+                Search Now
+              </Link>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {mobileMenu && (
+          <>
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+              onClick={() =>
+                setMobileMenu(false)
+              }
+              className="
+                fixed
+                inset-0
+                z-40
+                bg-black/60
+                backdrop-blur-sm
+                lg:hidden
+              "
+            />
+
+            <motion.div
+              initial={{
+                x: "100%",
+              }}
+              animate={{
+                x: 0,
+              }}
+              exit={{
+                x: "100%",
+              }}
+              transition={{
+                duration: 0.3,
+              }}
+              className="
+                fixed
+                right-0
+                top-0
+                z-50
+                h-screen
+                w-[85%]
+                max-w-sm
+                overflow-y-auto
+                border-l
+                border-white/10
+                bg-black/95
+                p-6
+                backdrop-blur-3xl
+                lg:hidden
+              "
+            >
+              <div className="mt-24 space-y-5">
+
+                {/* MOBILE PROFILE */}
+                <Link
+                  href="/profile"
+                  onClick={() =>
+                    setMobileMenu(false)
+                  }
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                    rounded-2xl
+                    border
+                    border-white/5
+                    bg-white/[0.03]
+                    px-5
+                    py-4
+                    text-sm
+                    uppercase
+                    tracking-[0.18em]
+                    text-zinc-200
+                    transition-all
+                    hover:bg-white
+                    hover:text-black
+                  "
+                >
+                  Profile
+                  <ArrowRight size={16} />
+                </Link>
+
+                {/* MOBILE CART */}
+                <Link
+                  href="/cart"
+                  onClick={() =>
+                    setMobileMenu(false)
+                  }
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                    rounded-2xl
+                    border
+                    border-white/5
+                    bg-white/[0.03]
+                    px-5
+                    py-4
+                    text-sm
+                    uppercase
+                    tracking-[0.18em]
+                    text-zinc-200
+                    transition-all
+                    hover:bg-white
+                    hover:text-black
+                  "
+                >
+                  Cart
+                  <ArrowRight size={16} />
+                </Link>
+
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() =>
+                      setMobileMenu(false)
+                    }
+                    className="
+                      flex
+                      items-center
+                      justify-between
+                      rounded-2xl
+                      border
+                      border-white/5
+                      bg-white/[0.03]
+                      px-5
+                      py-4
+                      text-sm
+                      uppercase
+                      tracking-[0.18em]
+                      text-zinc-200
+                      transition-all
+                      hover:bg-white
+                      hover:text-black
+                    "
+                  >
+                    {item.name}
+
+                    <ArrowRight size={16} />
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }

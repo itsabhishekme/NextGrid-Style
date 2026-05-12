@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -13,9 +14,9 @@ import {
   ShieldCheck,
   Truck,
   Headphones,
-  Crown,
   Globe,
   Sparkles,
+  Gem,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -24,39 +25,87 @@ const features = [
   {
     icon: Truck,
     title: "Fast Delivery",
+    desc: "Express worldwide shipping",
   },
 
   {
     icon: ShieldCheck,
     title: "Secure Payments",
+    desc: "100% protected checkout",
   },
 
   {
     icon: Headphones,
     title: "24/7 Support",
+    desc: "Premium customer care",
   },
 ];
 
 const footerLinks = {
   Shop: [
-    "Men",
-    "Women",
-    "Luxury",
-    "Streetwear",
+    {
+      name: "Men",
+      href: "/men",
+    },
+
+    {
+      name: "Women",
+      href: "/women",
+    },
+
+    {
+      name: "Kids",
+      href: "/kids",
+    },
+
+    {
+      name: "Luxury",
+      href: "/luxury",
+    },
   ],
 
   Company: [
-    "About",
-    "Careers",
-    "Stores",
-    "Blog",
+    {
+      name: "About",
+      href: "/about",
+    },
+
+    {
+      name: "Careers",
+      href: "/careers",
+    },
+
+    {
+      name: "Stores",
+      href: "/stores",
+    },
+
+    {
+      name: "Contact",
+      href: "/contact",
+    },
   ],
 
   Support: [
-    "Help Center",
-    "Shipping",
-    "Returns",
-    "Contact",
+    {
+      name: "Help Center",
+      href: "/help",
+    },
+
+    {
+      name: "Shipping",
+      href: "/shipping",
+    },
+
+    {
+      name: "Returns",
+      href: "/returns",
+    },
+
+    {
+      name: "Privacy Policy",
+      href: "/privacy",
+    },
   ],
 };
 
@@ -74,14 +123,14 @@ export default function Footer() {
           }}
         />
 
-        <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-fuchsia-500/10 blur-[180px]" />
+        <div className="absolute left-[-120px] top-[-120px] h-[450px] w-[450px] rounded-full bg-fuchsia-500/20 blur-[180px]" />
 
-        <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[180px]" />
+        <div className="absolute bottom-[-120px] right-[-120px] h-[450px] w-[450px] rounded-full bg-cyan-500/20 blur-[180px]" />
       </div>
 
       {/* FEATURES */}
       <section className="relative border-b border-white/10">
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-12 md:grid-cols-3 lg:px-10">
+        <div className="mx-auto grid max-w-7xl gap-6 px-5 py-12 md:grid-cols-3 lg:px-10">
           {features.map((item, index) => {
             const Icon = item.icon;
 
@@ -89,35 +138,49 @@ export default function Footer() {
               <motion.div
                 key={index}
                 whileHover={{
-                  y: -6,
+                  y: -8,
+                }}
+                transition={{
+                  duration: 0.3,
                 }}
                 className="
-                  rounded-[30px]
+                  group
+                  rounded-[32px]
                   border
                   border-white/10
-                  bg-white/[0.03]
+                  bg-white/[0.04]
                   p-7
                   backdrop-blur-2xl
+                  transition-all
+                  hover:border-white/20
+                  hover:bg-white/[0.06]
                 "
               >
                 <div
                   className="
                     flex
-                    h-14
-                    w-14
+                    h-16
+                    w-16
                     items-center
                     justify-center
-                    rounded-2xl
-                    bg-white
+                    rounded-3xl
+                    bg-gradient-to-br
+                    from-white
+                    to-zinc-300
                     text-black
+                    shadow-2xl
                   "
                 >
-                  <Icon size={26} />
+                  <Icon size={28} />
                 </div>
 
-                <h3 className="mt-5 text-xl font-bold">
+                <h3 className="mt-5 text-2xl font-bold">
                   {item.title}
                 </h3>
+
+                <p className="mt-2 text-zinc-400">
+                  {item.desc}
+                </p>
               </motion.div>
             );
           })}
@@ -125,26 +188,39 @@ export default function Footer() {
       </section>
 
       {/* MAIN */}
-      <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <div className="grid gap-14 lg:grid-cols-2">
-          {/* LEFT */}
+      <div className="relative mx-auto max-w-7xl px-5 py-20 lg:px-10">
+        <div className="grid gap-16 lg:grid-cols-2">
+          {/* LEFT SIDE */}
           <div>
             {/* LOGO */}
             <div className="flex items-center gap-5">
-              <div
+              <motion.div
+                whileHover={{
+                  rotate: 5,
+                  scale: 1.05,
+                }}
                 className="
                   flex
-                  h-16
-                  w-16
+                  h-20
+                  w-20
                   items-center
                   justify-center
-                  rounded-3xl
+                  overflow-hidden
+                  rounded-[28px]
+                  border
+                  border-white/10
                   bg-white
-                  text-black
+                  shadow-[0_0_40px_rgba(255,255,255,0.2)]
                 "
               >
-                <Crown size={30} />
-              </div>
+                <Image
+                  src="/favicon.ico"
+                  alt="logo"
+                  width={55}
+                  height={55}
+                  className="object-contain"
+                />
+              </motion.div>
 
               <div>
                 <h2
@@ -157,46 +233,49 @@ export default function Footer() {
                     text-4xl
                     font-black
                     uppercase
-                    tracking-[0.2em]
+                    tracking-[0.25em]
                     text-transparent
                   "
                 >
-                  NextGrid
+                  NextGrid Style
                 </h2>
 
-                <p className="mt-1 text-sm text-zinc-500">
-                  Luxury Fashion
-                </p>
+                <div className="mt-2 flex items-center gap-2 text-zinc-400">
+
+                  <span className="text-sm tracking-[0.2em] uppercase">
+                    Fashion Studio
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* DESCRIPTION */}
-            <p className="mt-8 max-w-xl text-lg leading-8 text-zinc-400">
-              Premium futuristic fashion platform
-              delivering luxury experiences worldwide.
+            <p className="mt-8 max-w-2xl text-lg leading-9 text-zinc-400">
+              Experience futuristic fashion with premium collections,
+              luxury styling, modern streetwear, and world-class shopping.
             </p>
 
             {/* CONTACT */}
-            <div className="mt-10 space-y-5 text-zinc-400">
-              <div className="flex items-center gap-4">
+            <div className="mt-10 space-y-5">
+              <div className="flex items-center gap-4 text-zinc-400">
                 <Mail size={18} />
 
                 support@nextgrid.com
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 text-zinc-400">
                 <Phone size={18} />
 
                 +91 98765 43210
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 text-zinc-400">
                 <MapPin size={18} />
 
                 Bangalore, India
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 text-zinc-400">
                 <Globe size={18} />
 
                 www.nextgrid.com
@@ -205,13 +284,13 @@ export default function Footer() {
 
             {/* APP BUTTONS */}
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              {/* APPLE */}
-              <motion.button
+              <motion.a
+                href="#"
                 whileHover={{
                   scale: 1.03,
                 }}
                 whileTap={{
-                  scale: 0.98,
+                  scale: 0.97,
                 }}
                 className="
                   flex
@@ -222,12 +301,13 @@ export default function Footer() {
                   px-7
                   py-5
                   text-black
+                  shadow-2xl
                 "
               >
-                <Apple size={32} />
+                <Apple size={30} />
 
                 <div>
-                  <p className="text-xs">
+                  <p className="text-xs font-medium">
                     Download on the
                   </p>
 
@@ -235,15 +315,15 @@ export default function Footer() {
                     App Store
                   </h4>
                 </div>
-              </motion.button>
+              </motion.a>
 
-              {/* PLAYSTORE */}
-              <motion.button
+              <motion.a
+                href="#"
                 whileHover={{
                   scale: 1.03,
                 }}
                 whileTap={{
-                  scale: 0.98,
+                  scale: 0.97,
                 }}
                 className="
                   flex
@@ -252,7 +332,7 @@ export default function Footer() {
                   rounded-3xl
                   border
                   border-white/10
-                  bg-white/[0.03]
+                  bg-white/[0.05]
                   px-7
                   py-5
                   transition-all
@@ -260,10 +340,10 @@ export default function Footer() {
                   hover:text-black
                 "
               >
-                <Play size={32} />
+                <Play size={30} />
 
                 <div>
-                  <p className="text-xs">
+                  <p className="text-xs font-medium">
                     GET IT ON
                   </p>
 
@@ -271,69 +351,71 @@ export default function Footer() {
                     Google Play
                   </h4>
                 </div>
-              </motion.button>
+              </motion.a>
             </div>
           </div>
 
-          {/* RIGHT */}
-          <div className="grid gap-10 sm:grid-cols-3">
-            {Object.entries(footerLinks).map(
-              ([title, links]) => (
-                <div key={title}>
-                  <h3 className="mb-6 text-2xl font-black">
-                    {title}
-                  </h3>
+          {/* RIGHT SIDE */}
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+            {Object.entries(footerLinks).map(([title, links]) => (
+              <div key={title}>
+                <h3 className="mb-7 text-2xl font-black">
+                  {title}
+                </h3>
 
-                  <ul className="space-y-4">
-                    {links.map((link) => (
-                      <li key={link}>
-                        <Link
-                          href="/"
+                <ul className="space-y-5">
+                  {links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="
+                          group
+                          flex
+                          items-center
+                          gap-3
+                          text-zinc-400
+                          transition-all
+                          hover:translate-x-2
+                          hover:text-white
+                        "
+                      >
+                        <ArrowRight
+                          size={15}
                           className="
-                            group
-                            flex
-                            items-center
-                            gap-3
-                            text-zinc-400
+                            opacity-0
                             transition-all
-                            hover:text-white
+                            group-hover:opacity-100
                           "
-                        >
-                          <ArrowRight
-                            size={14}
-                            className="
-                              opacity-0
-                              transition-all
-                              group-hover:opacity-100
-                            "
-                          />
+                        />
 
-                          {link}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )
-            )}
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* NEWSLETTER */}
         <div
           className="
-            mt-20
+            relative
+            mt-24
             overflow-hidden
-            rounded-[40px]
+            rounded-[42px]
             border
             border-white/10
-            bg-white/[0.03]
+            bg-white/[0.05]
             p-8
             backdrop-blur-3xl
             md:p-12
           "
         >
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="absolute right-0 top-0 h-52 w-52 rounded-full bg-fuchsia-500/10 blur-[120px]" />
+
+          <div className="relative flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
             {/* LEFT */}
             <div>
               <div
@@ -344,24 +426,24 @@ export default function Footer() {
                   rounded-full
                   border
                   border-white/10
-                  bg-white/[0.03]
+                  bg-white/[0.04]
                   px-5
                   py-3
                 "
               >
                 <Sparkles size={16} />
 
-                <span className="text-xs uppercase tracking-[0.3em] text-zinc-400">
+                <span className="text-xs uppercase tracking-[0.3em] text-zinc-300">
                   Newsletter
                 </span>
               </div>
 
-              <h2 className="mt-6 text-4xl font-black">
+              <h2 className="mt-6 text-4xl font-black md:text-5xl">
                 Stay Updated
               </h2>
 
-              <p className="mt-4 text-zinc-400">
-                Get fashion drops and premium updates.
+              <p className="mt-4 text-lg text-zinc-400">
+                Receive premium fashion drops and exclusive offers.
               </p>
             </div>
 
@@ -371,15 +453,17 @@ export default function Footer() {
                 type="email"
                 placeholder="Enter your email"
                 className="
-                  h-14
+                  h-16
                   flex-1
                   rounded-2xl
                   border
                   border-white/10
-                  bg-white/[0.03]
-                  px-5
+                  bg-black/40
+                  px-6
+                  text-white
                   outline-none
                   placeholder:text-zinc-500
+                  focus:border-white/30
                 "
               />
 
@@ -388,11 +472,11 @@ export default function Footer() {
                   scale: 1.03,
                 }}
                 whileTap={{
-                  scale: 0.98,
+                  scale: 0.97,
                 }}
                 className="
                   flex
-                  h-14
+                  h-16
                   items-center
                   justify-center
                   gap-3
@@ -403,6 +487,7 @@ export default function Footer() {
                   uppercase
                   tracking-[0.2em]
                   text-black
+                  shadow-2xl
                 "
               >
                 Subscribe
@@ -422,13 +507,24 @@ export default function Footer() {
 
             <div className="flex flex-wrap gap-5">
               {[
-                "Privacy",
-                "Terms",
-                "Cookies",
+                {
+                  name: "Privacy",
+                  href: "/privacy",
+                },
+
+                {
+                  name: "Terms",
+                  href: "/terms",
+                },
+
+                {
+                  name: "Cookies",
+                  href: "/cookies",
+                },
               ].map((item) => (
                 <Link
-                  key={item}
-                  href="/"
+                  key={item.name}
+                  href={item.href}
                   className="
                     text-sm
                     text-zinc-500
@@ -436,7 +532,7 @@ export default function Footer() {
                     hover:text-white
                   "
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>
@@ -449,7 +545,7 @@ export default function Footer() {
                 rounded-full
                 border
                 border-white/10
-                bg-white/[0.03]
+                bg-white/[0.04]
                 px-5
                 py-3
               "
@@ -460,6 +556,13 @@ export default function Footer() {
                 Secure Payments
               </span>
             </div>
+          </div>
+
+          {/* DEVELOPER */}
+          <div className="mt-8 text-center">
+            <p className="text-sm tracking-[0.25em] text-zinc-600 uppercase">
+              Developed by EchoSoul Developer
+            </p>
           </div>
         </div>
       </div>

@@ -1,373 +1,190 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import {
   Search,
-  SlidersHorizontal,
   ShoppingBag,
   Heart,
-  Star,
-  Sparkles,
-  ArrowRight,
 } from "lucide-react";
 
-import {
-  motion,
-} from "framer-motion";
-
-const trendingSearches = [
-  "Streetwear",
-  "Luxury Hoodies",
-  "Sneakers",
-  "Oversized Fashion",
-  "Summer Collection",
-  "Premium Jackets",
-];
-
-const searchProducts = [
+const categories = [
   {
-    name: "Luxury Black Hoodie",
-    price: "$189",
-    image: "/streetwear/hoodie.jpg",
-    tag: "Trending",
-    rating: "4.9",
+    title: "Men",
+    image:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
   },
 
   {
-    name: "Urban Sneakers",
-    price: "$320",
-    image: "/streetwear/shoes.jpg",
-    tag: "Luxury",
-    rating: "4.8",
+    title: "Women",
+    image:
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c",
   },
 
   {
-    name: "Premium Cargo Pants",
-    price: "$160",
-    image: "/streetwear/cargo.jpg",
-    tag: "New",
-    rating: "4.7",
-  },
-
-  {
-    name: "Designer Jacket",
-    price: "$420",
-    image: "/streetwear/jacket.jpg",
-    tag: "Exclusive",
-    rating: "5.0",
-  },
-
-  {
-    name: "Future Streetwear Tee",
-    price: "$110",
-    image: "/streetwear/street1.jpg",
-    tag: "Hot",
-    rating: "4.8",
-  },
-
-  {
-    name: "Oversized Urban Hoodie",
-    price: "$210",
-    image: "/streetwear/street2.jpg",
-    tag: "Premium",
-    rating: "4.9",
+    title: "Children",
+    image:
+      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef",
   },
 ];
 
-export default function SearchPage() {
+const products = [
+  {
+    name: "Men Streetwear",
+    price: "$180",
+    image:
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+  },
+
+  {
+    name: "Women Luxury Fashion",
+    price: "$240",
+    image:
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b",
+  },
+
+  {
+    name: "Kids Collection",
+    price: "$120",
+    image:
+      "https://images.unsplash.com/photo-1503919545889-aef636e10ad4",
+  },
+
+  {
+    name: "Premium Jacket",
+    price: "$310",
+    image:
+      "https://images.unsplash.com/photo-1445205170230-053b83016050",
+  },
+
+  {
+    name: "Urban Outfit",
+    price: "$190",
+    image:
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf",
+  },
+
+  {
+    name: "Modern Style",
+    price: "$280",
+    image:
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b",
+  },
+];
+
+export default function SearchFashionPage() {
   return (
-    <main className="relative overflow-hidden bg-black text-white">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* GRID */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-
-            backgroundSize: "80px 80px",
-          }}
+    <main className="min-h-screen overflow-hidden bg-black text-white">
+      {/* HERO */}
+      <section className="relative h-[90vh] w-full">
+        <Image
+          src="https://images.unsplash.com/photo-1496747611176-843222e1e57c"
+          alt="Fashion"
+          fill
+          priority
+          className="object-cover"
         />
 
-        {/* GLOW */}
-        <div className="absolute left-0 top-0 h-[700px] w-[700px] rounded-full bg-cyan-500/10 blur-[180px]" />
+        <div className="absolute inset-0 bg-black/60" />
 
-        <div className="absolute right-0 top-0 h-[700px] w-[700px] rounded-full bg-purple-500/10 blur-[180px]" />
-      </div>
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+          <h1 className="text-6xl font-black md:text-8xl">
+            SEARCH
+            <span className="block text-zinc-300">
+              FASHION
+            </span>
+          </h1>
 
-      {/* HERO */}
-      <section
-        className="
-          relative
-          mx-auto
-          max-w-7xl
-          px-6
-          pb-20
-          pt-[150px]
-          lg:px-10
-        "
-      >
-        {/* BADGE */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          className="
-            inline-flex
-            items-center
-            gap-3
-            rounded-full
-            border
-            border-white/10
-            bg-white/[0.03]
-            px-6
-            py-3
-          "
-        >
-          <Sparkles size={16} />
-
-          <span
-            className="
-              text-xs
-              uppercase
-              tracking-[0.3em]
-              text-zinc-400
-            "
-          >
-            Premium Fashion Search
-          </span>
-        </motion.div>
-
-        {/* TITLE */}
-        <motion.h1
-          initial={{
-            opacity: 0,
-            y: 50,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          className="
-            mt-10
-            text-6xl
-            font-black
-            leading-[0.95]
-            md:text-8xl
-          "
-        >
-          SEARCH
-          <span
-            className="
-              block
-              bg-gradient-to-r
-              from-white
-              via-zinc-300
-              to-zinc-500
-              bg-clip-text
-              text-transparent
-            "
-          >
-            FASHION
-          </span>
-        </motion.h1>
-
-        {/* DESCRIPTION */}
-        <motion.p
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            delay: 0.2,
-          }}
-          className="
-            mt-8
-            max-w-3xl
-            text-lg
-            leading-9
-            text-zinc-400
-          "
-        >
-          Discover futuristic streetwear, luxury
-          fashion and premium collections designed
-          for the next generation fashion culture.
-        </motion.p>
-
-        {/* SEARCH BAR */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            delay: 0.3,
-          }}
-          className="
-            mt-14
-            flex
-            flex-col
-            gap-5
-            md:flex-row
-          "
-        >
-          {/* INPUT */}
+          {/* SEARCH BAR */}
           <div
             className="
+              mt-10
               flex
-              flex-1
+              w-full
+              max-w-3xl
               items-center
-              gap-5
-              rounded-[36px]
+              gap-4
+              rounded-full
               border
               border-white/10
-              bg-white/[0.03]
-              px-7
-              py-6
-              backdrop-blur-3xl
+              bg-white/10
+              px-6
+              py-5
+              backdrop-blur-xl
             "
           >
             <Search size={24} />
 
             <input
               type="text"
-              placeholder="Search premium fashion..."
+              placeholder="Search fashion..."
               className="
                 w-full
                 bg-transparent
                 text-lg
                 outline-none
-                placeholder:text-zinc-500
+                placeholder:text-zinc-400
               "
             />
           </div>
+        </div>
+      </section>
 
-          {/* FILTER */}
-          <button
-            className="
-              flex
-              items-center
-              justify-center
-              gap-3
-              rounded-full
-              border
-              border-white/10
-              bg-white/[0.03]
-              px-8
-              py-5
-              font-bold
-              uppercase
-              tracking-[0.2em]
-            "
-          >
-            <SlidersHorizontal size={18} />
+      {/* CATEGORIES */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <h2 className="mb-12 text-center text-5xl font-black">
+          Categories
+        </h2>
 
-            Filters
-          </button>
-        </motion.div>
-
-        {/* TRENDING */}
-        <div className="mt-10 flex flex-wrap gap-4">
-          {trendingSearches.map((item) => (
-            <button
-              key={item}
-              className="
-                rounded-full
-                border
-                border-white/10
-                bg-white/[0.03]
-                px-6
-                py-3
-                text-sm
-                uppercase
-                tracking-[0.2em]
-                transition-all
-                hover:bg-white
-                hover:text-black
-              "
+        <div className="grid gap-8 md:grid-cols-3">
+          {categories.map((item, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.03 }}
+              className="relative overflow-hidden rounded-[30px]"
             >
-              {item}
-            </button>
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={500}
+                height={700}
+                className="
+                  h-[500px]
+                  w-full
+                  object-cover
+                "
+              />
+
+              <div className="absolute inset-0 bg-black/30" />
+
+              <div className="absolute bottom-6 left-6">
+                <h3 className="text-4xl font-black">
+                  {item.title}
+                </h3>
+              </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* RESULTS */}
-      <section className="relative mx-auto max-w-7xl px-6 pb-28 lg:px-10">
-        {/* HEADER */}
-        <div className="mb-14 flex items-end justify-between">
-          <div>
-            <p
-              className="
-                text-xs
-                uppercase
-                tracking-[0.4em]
-                text-zinc-500
-              "
-            >
-              Search Results
-            </p>
+      {/* PRODUCTS */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <h2 className="mb-14 text-center text-5xl font-black">
+          Trending Products
+        </h2>
 
-            <h2 className="mt-5 text-5xl font-black">
-              Trending Products
-            </h2>
-          </div>
-
-          <button
-            className="
-              hidden
-              items-center
-              gap-3
-              rounded-full
-              border
-              border-white/10
-              bg-white/[0.03]
-              px-6
-              py-4
-              text-sm
-              uppercase
-              tracking-[0.2em]
-              md:flex
-            "
-          >
-            View All
-
-            <ArrowRight size={18} />
-          </button>
-        </div>
-
-        {/* GRID */}
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {searchProducts.map((product, index) => (
+          {products.map((product, index) => (
             <motion.div
               key={index}
-              whileHover={{
-                y: -8,
-              }}
+              whileHover={{ y: -8 }}
               className="
                 overflow-hidden
-                rounded-[40px]
+                rounded-[32px]
                 border
                 border-white/10
-                bg-white/[0.03]
+                bg-zinc-900
               "
             >
               {/* IMAGE */}
@@ -387,12 +204,7 @@ export default function SearchPage() {
                   "
                 />
 
-                {/* TAG */}
-                <div className="absolute left-4 top-4 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-black">
-                  {product.tag}
-                </div>
-
-                {/* WISHLIST */}
+                {/* HEART */}
                 <button
                   className="
                     absolute
@@ -404,7 +216,7 @@ export default function SearchPage() {
                     items-center
                     justify-center
                     rounded-full
-                    bg-black/40
+                    bg-black/50
                     backdrop-blur-xl
                   "
                 >
@@ -414,29 +226,12 @@ export default function SearchPage() {
 
               {/* CONTENT */}
               <div className="p-6">
-                {/* RATING */}
-                <div className="flex items-center gap-2">
-                  <Star
-                    size={16}
-                    className="
-                      fill-yellow-400
-                      text-yellow-400
-                    "
-                  />
-
-                  <span className="text-sm text-zinc-400">
-                    {product.rating} Rating
-                  </span>
-                </div>
-
-                {/* TITLE */}
-                <h3 className="mt-4 text-3xl font-black">
+                <h3 className="text-3xl font-black">
                   {product.name}
                 </h3>
 
-                {/* PRICE */}
                 <div className="mt-6 flex items-center justify-between">
-                  <p className="text-2xl font-black">
+                  <p className="text-2xl font-bold">
                     {product.price}
                   </p>
 
