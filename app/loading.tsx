@@ -7,6 +7,7 @@ const floatingAnimation = {
     y: [-15, 15, -15],
     x: [-5, 5, -5],
   },
+
   transition: {
     duration: 6,
     repeat: Infinity,
@@ -17,18 +18,19 @@ const floatingAnimation = {
 export default function Loading() {
   return (
     <div className="fixed inset-0 z-[9999] overflow-hidden bg-black">
+
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05),transparent_45%)]" />
 
       {/* GRID */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)
           `,
-          backgroundSize: "70px 70px",
+          backgroundSize: "80px 80px",
         }}
       />
 
@@ -36,14 +38,23 @@ export default function Loading() {
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.5, 0.8, 0.5],
+          opacity: [0.4, 0.8, 0.4],
         }}
         transition={{
           duration: 7,
           repeat: Infinity,
-          ease: "easeInOut" as const,
+          ease: "easeInOut",
         }}
-        className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-fuchsia-500/20 blur-[150px]"
+        className="
+          absolute
+          -left-40
+          top-0
+          h-[520px]
+          w-[520px]
+          rounded-full
+          bg-fuchsia-500/20
+          blur-[160px]
+        "
       />
 
       {/* CYAN GLOW */}
@@ -55,9 +66,18 @@ export default function Loading() {
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: "easeInOut" as const,
+          ease: "easeInOut",
         }}
-        className="absolute right-0 top-[20%] h-[450px] w-[450px] rounded-full bg-cyan-500/20 blur-[140px]"
+        className="
+          absolute
+          right-0
+          top-[20%]
+          h-[500px]
+          w-[500px]
+          rounded-full
+          bg-cyan-500/20
+          blur-[150px]
+        "
       />
 
       {/* TOP LIGHT */}
@@ -71,39 +91,24 @@ export default function Loading() {
           -translate-x-1/2
           bg-gradient-to-r
           from-transparent
-          via-white/60
-          to-transparent
-        "
-      />
-
-      {/* BOTTOM LIGHT */}
-      <div
-        className="
-          absolute
-          bottom-0
-          left-1/2
-          h-[1px]
-          w-[70%]
-          -translate-x-1/2
-          bg-gradient-to-r
-          from-transparent
-          via-white/20
+          via-white/70
           to-transparent
         "
       />
 
       {/* CENTER */}
       <div className="relative z-20 flex h-full flex-col items-center justify-center px-6">
+
         {/* LIGHT BEAM */}
         <motion.div
           animate={{
-            opacity: [0.3, 1, 0.3],
+            opacity: [0.2, 0.9, 0.2],
             scaleY: [1, 1.2, 1],
           }}
           transition={{
             duration: 4,
             repeat: Infinity,
-            ease: "easeInOut" as const,
+            ease: "easeInOut",
           }}
           className="
             absolute
@@ -123,19 +128,19 @@ export default function Loading() {
             rotate: 360,
           }}
           transition={{
-            duration: 14,
+            duration: 15,
             repeat: Infinity,
-            ease: "linear" as const,
+            ease: "linear",
           }}
           className="
             absolute
-            h-[320px]
-            w-[320px]
+            h-[340px]
+            w-[340px]
             rounded-full
             border
             border-white/10
             border-t-fuchsia-400/60
-            border-r-cyan-400/40
+            border-r-cyan-400/50
             shadow-[0_0_80px_rgba(255,255,255,0.05)]
           "
         />
@@ -146,14 +151,14 @@ export default function Loading() {
             rotate: -360,
           }}
           transition={{
-            duration: 9,
+            duration: 10,
             repeat: Infinity,
-            ease: "linear" as const,
+            ease: "linear",
           }}
           className="
             absolute
-            h-[220px]
-            w-[220px]
+            h-[240px]
+            w-[240px]
             rounded-full
             border
             border-white/5
@@ -162,14 +167,14 @@ export default function Loading() {
           "
         />
 
-        {/* FLOATING PARTICLES */}
+        {/* PARTICLE */}
         <motion.div
           animate={floatingAnimation.animate}
           transition={floatingAnimation.transition}
           className="
             absolute
-            left-[35%]
-            top-[35%]
+            left-[36%]
+            top-[36%]
             h-3
             w-3
             rounded-full
@@ -178,6 +183,7 @@ export default function Loading() {
           "
         />
 
+        {/* PARTICLE */}
         <motion.div
           animate={{
             y: [15, -15, 15],
@@ -186,12 +192,12 @@ export default function Loading() {
           transition={{
             duration: 7,
             repeat: Infinity,
-            ease: "easeInOut" as const,
+            ease: "easeInOut",
           }}
           className="
             absolute
-            right-[35%]
-            bottom-[35%]
+            right-[36%]
+            bottom-[36%]
             h-4
             w-4
             rounded-full
@@ -200,7 +206,7 @@ export default function Loading() {
           "
         />
 
-        {/* GLASS CARD */}
+        {/* MAIN CARD */}
         <motion.div
           initial={{
             opacity: 0,
@@ -214,22 +220,23 @@ export default function Loading() {
           }}
           transition={{
             duration: 1.2,
-            ease: "easeOut" as const,
+            ease: "easeOut",
           }}
           className="
             relative
             overflow-hidden
-            rounded-[40px]
+            rounded-[42px]
             border
             border-white/10
             bg-white/[0.05]
-            px-12
+            px-10
             py-14
             backdrop-blur-3xl
-            shadow-[0_0_100px_rgba(255,255,255,0.05)]
+            shadow-[0_0_120px_rgba(255,255,255,0.06)]
           "
         >
-          {/* SHINE EFFECT */}
+
+          {/* SHINE */}
           <motion.div
             animate={{
               x: ["-120%", "220%"],
@@ -237,7 +244,7 @@ export default function Loading() {
             transition={{
               duration: 4,
               repeat: Infinity,
-              ease: "linear" as const,
+              ease: "linear",
             }}
             className="
               absolute
@@ -250,7 +257,7 @@ export default function Loading() {
             "
           />
 
-          {/* BRAND NAME */}
+          {/* TITLE */}
           <motion.h1
             animate={{
               opacity: [0.7, 1, 0.7],
@@ -258,7 +265,7 @@ export default function Loading() {
             transition={{
               duration: 3,
               repeat: Infinity,
-              ease: "easeInOut" as const,
+              ease: "easeInOut",
             }}
             className="
               relative
@@ -272,7 +279,7 @@ export default function Loading() {
               text-4xl
               font-black
               uppercase
-              tracking-[0.5em]
+              tracking-[0.45em]
               text-transparent
               sm:text-6xl
             "
@@ -284,16 +291,15 @@ export default function Loading() {
           <motion.p
             initial={{
               opacity: 0,
-              y: 15,
+              y: 10,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              delay: 0.4,
+              delay: 0.3,
               duration: 1,
-              ease: "easeOut" as const,
             }}
             className="
               mt-5
@@ -308,7 +314,17 @@ export default function Loading() {
           </motion.p>
 
           {/* LOADING BAR */}
-          <div className="relative mt-12 h-[5px] w-[320px] overflow-hidden rounded-full bg-white/10">
+          <div
+            className="
+              relative
+              mt-12
+              h-[5px]
+              w-[320px]
+              overflow-hidden
+              rounded-full
+              bg-white/10
+            "
+          >
             <motion.div
               initial={{
                 x: "-100%",
@@ -319,7 +335,7 @@ export default function Loading() {
               transition={{
                 duration: 1.3,
                 repeat: Infinity,
-                ease: "easeInOut" as const,
+                ease: "easeInOut",
               }}
               className="
                 absolute
@@ -342,7 +358,7 @@ export default function Loading() {
             transition={{
               duration: 2,
               repeat: Infinity,
-              ease: "easeInOut" as const,
+              ease: "easeInOut",
             }}
             className="
               mt-6
@@ -353,7 +369,7 @@ export default function Loading() {
               text-zinc-500
             "
           >
-            Loading Experience
+            Preparing Experience
           </motion.p>
         </motion.div>
       </div>
