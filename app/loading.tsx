@@ -2,342 +2,63 @@
 
 import { motion } from "framer-motion";
 
+const floatingAnimation = {
+  animate: {
+    y: [-15, 15, -15],
+    x: [-5, 5, -5],
+  },
+  transition: {
+    duration: 6,
+    repeat: Infinity,
+    ease: "easeInOut" as const,
+  },
+};
+
 export default function Loading() {
   return (
-    <div
-      className="
-        fixed
-        inset-0
-        z-[9999]
-        flex
-        items-center
-        justify-center
-        overflow-hidden
-        bg-black
-      "
-    >
-      {/* BACKGROUND GRID */}
+    <div className="fixed inset-0 z-[9999] overflow-hidden bg-black">
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_40%)]" />
+
+      {/* GRID */}
       <div
-        className="
-          absolute
-          inset-0
-          opacity-[0.03]
-        "
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+          backgroundImage: `
+            linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)
+          `,
+          backgroundSize: "70px 70px",
         }}
       />
 
       {/* PINK GLOW */}
       <motion.div
         animate={{
-          scale: [1, 1.15, 1],
+          scale: [1, 1.2, 1],
+          opacity: [0.5, 0.8, 0.5],
         }}
         transition={{
+          duration: 7,
           repeat: Infinity,
-          duration: 5,
+          ease: "easeInOut" as const,
         }}
-        className="
-          absolute
-          left-[-200px]
-          top-[-200px]
-          h-[500px]
-          w-[500px]
-          rounded-full
-          bg-pink-500/10
-          blur-[140px]
-        "
+        className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-fuchsia-500/20 blur-[150px]"
       />
 
       {/* CYAN GLOW */}
       <motion.div
         animate={{
-          scale: [1, 1.08, 1],
+          scale: [1, 1.1, 1],
+          opacity: [0.4, 0.7, 0.4],
         }}
         transition={{
+          duration: 8,
           repeat: Infinity,
-          duration: 6,
+          ease: "easeInOut" as const,
         }}
-        className="
-          absolute
-          right-[-150px]
-          top-[20%]
-          h-[400px]
-          w-[400px]
-          rounded-full
-          bg-cyan-500/10
-          blur-[120px]
-        "
+        className="absolute right-0 top-[20%] h-[450px] w-[450px] rounded-full bg-cyan-500/20 blur-[140px]"
       />
-
-      {/* CENTER CONTENT */}
-      <div
-        className="
-          relative
-          z-10
-          flex
-          flex-col
-          items-center
-          justify-center
-          px-6
-        "
-      >
-        {/* OUTER ROTATING RING */}
-        <motion.div
-          animate={{
-            rotate: 360,
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 10,
-            ease: "linear",
-          }}
-          className="
-            absolute
-            h-56
-            w-56
-            rounded-full
-            border
-            border-white/10
-            border-t-pink-400/60
-          "
-        />
-
-        {/* INNER ROTATING RING */}
-        <motion.div
-          animate={{
-            rotate: -360,
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 7,
-            ease: "linear",
-          }}
-          className="
-            absolute
-            h-40
-            w-40
-            rounded-full
-            border
-            border-white/5
-            border-b-cyan-400/60
-          "
-        />
-
-        {/* FLOATING PARTICLES */}
-        <motion.div
-          animate={{
-            y: [-10, 10, -10],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 3,
-          }}
-          className="
-            absolute
-            left-[-30px]
-            top-[20px]
-            h-3
-            w-3
-            rounded-full
-            bg-pink-400
-            shadow-[0_0_20px_rgba(255,105,180,0.8)]
-          "
-        />
-
-        <motion.div
-          animate={{
-            y: [10, -10, 10],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 4,
-          }}
-          className="
-            absolute
-            right-[-20px]
-            bottom-[10px]
-            h-4
-            w-4
-            rounded-full
-            bg-cyan-400
-            shadow-[0_0_20px_rgba(34,211,238,0.8)]
-          "
-        />
-
-        {/* LOGO */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            scale: 0.7,
-          }}
-          animate={{
-            opacity: 1,
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="
-            relative
-            flex
-            h-32
-            w-32
-            items-center
-            justify-center
-            rounded-full
-            border
-            border-white/10
-            bg-white/[0.05]
-            backdrop-blur-3xl
-            shadow-[0_0_60px_rgba(255,255,255,0.08)]
-          "
-        >
-          {/* INNER GLOW */}
-          <div
-            className="
-              absolute
-              inset-0
-              rounded-full
-              bg-white/[0.04]
-              blur-2xl
-            "
-          />
-
-          {/* BRAND INITIAL */}
-          <h1
-            className="
-              relative
-              z-10
-              bg-gradient-to-r
-              from-white
-              via-zinc-300
-              to-zinc-500
-              bg-clip-text
-              text-3xl
-              font-black
-              uppercase
-              tracking-[0.3em]
-              text-transparent
-            "
-          >
-            NG
-          </h1>
-        </motion.div>
-
-        {/* BRAND NAME */}
-        <motion.h2
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-          }}
-          className="
-            mt-12
-            bg-gradient-to-r
-            from-white
-            via-zinc-300
-            to-zinc-500
-            bg-clip-text
-            text-3xl
-            font-black
-            uppercase
-            tracking-[0.3em]
-            text-transparent
-            sm:text-5xl
-          "
-        >
-          NextGrid
-        </motion.h2>
-
-        {/* SUBTITLE */}
-        <motion.p
-          animate={{
-            opacity: [0.5, 1, 0.5],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 2,
-          }}
-          className="
-            mt-4
-            text-[11px]
-            uppercase
-            tracking-[0.5em]
-            text-zinc-500
-          "
-        >
-          Style • Fashion • Luxury
-        </motion.p>
-
-        {/* LOADING BAR */}
-        <div
-          className="
-            relative
-            mt-10
-            h-[4px]
-            w-[260px]
-            overflow-hidden
-            rounded-full
-            bg-white/10
-          "
-        >
-          <motion.div
-            initial={{
-              x: "-100%",
-            }}
-            animate={{
-              x: "100%",
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.2,
-              ease: "easeInOut",
-            }}
-            className="
-              absolute
-              inset-y-0
-              w-1/2
-              rounded-full
-              bg-gradient-to-r
-              from-transparent
-              via-white
-              to-transparent
-            "
-          />
-        </div>
-
-        {/* LOADING TEXT */}
-        <motion.p
-          animate={{
-            opacity: [0.4, 1, 0.4],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 1.5,
-          }}
-          className="
-            mt-5
-            text-[10px]
-            uppercase
-            tracking-[0.4em]
-            text-zinc-600
-          "
-        >
-          Loading Experience
-        </motion.p>
-      </div>
 
       {/* TOP LIGHT */}
       <div
@@ -354,6 +75,288 @@ export default function Loading() {
           to-transparent
         "
       />
+
+      {/* BOTTOM LIGHT */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-1/2
+          h-[1px]
+          w-[70%]
+          -translate-x-1/2
+          bg-gradient-to-r
+          from-transparent
+          via-white/20
+          to-transparent
+        "
+      />
+
+      {/* CENTER */}
+      <div className="relative z-20 flex h-full flex-col items-center justify-center px-6">
+        {/* LIGHT BEAM */}
+        <motion.div
+          animate={{
+            opacity: [0.3, 1, 0.3],
+            scaleY: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut" as const,
+          }}
+          className="
+            absolute
+            h-[420px]
+            w-[2px]
+            bg-gradient-to-b
+            from-transparent
+            via-white
+            to-transparent
+            blur-sm
+          "
+        />
+
+        {/* OUTER RING */}
+        <motion.div
+          animate={{
+            rotate: 360,
+          }}
+          transition={{
+            duration: 14,
+            repeat: Infinity,
+            ease: "linear" as const,
+          }}
+          className="
+            absolute
+            h-[320px]
+            w-[320px]
+            rounded-full
+            border
+            border-white/10
+            border-t-fuchsia-400/60
+            border-r-cyan-400/40
+            shadow-[0_0_80px_rgba(255,255,255,0.05)]
+          "
+        />
+
+        {/* INNER RING */}
+        <motion.div
+          animate={{
+            rotate: -360,
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "linear" as const,
+          }}
+          className="
+            absolute
+            h-[220px]
+            w-[220px]
+            rounded-full
+            border
+            border-white/5
+            border-b-cyan-300/70
+            border-l-fuchsia-300/50
+          "
+        />
+
+        {/* FLOATING PARTICLES */}
+        <motion.div
+          animate={floatingAnimation.animate}
+          transition={floatingAnimation.transition}
+          className="
+            absolute
+            left-[35%]
+            top-[35%]
+            h-3
+            w-3
+            rounded-full
+            bg-fuchsia-400
+            shadow-[0_0_30px_rgba(217,70,239,1)]
+          "
+        />
+
+        <motion.div
+          animate={{
+            y: [15, -15, 15],
+            x: [5, -5, 5],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut" as const,
+          }}
+          className="
+            absolute
+            right-[35%]
+            bottom-[35%]
+            h-4
+            w-4
+            rounded-full
+            bg-cyan-400
+            shadow-[0_0_30px_rgba(34,211,238,1)]
+          "
+        />
+
+        {/* GLASS CARD */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.9,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1.2,
+            ease: "easeOut" as const,
+          }}
+          className="
+            relative
+            overflow-hidden
+            rounded-[40px]
+            border
+            border-white/10
+            bg-white/[0.05]
+            px-12
+            py-14
+            backdrop-blur-3xl
+            shadow-[0_0_100px_rgba(255,255,255,0.05)]
+          "
+        >
+          {/* SHINE EFFECT */}
+          <motion.div
+            animate={{
+              x: ["-120%", "220%"],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear" as const,
+            }}
+            className="
+              absolute
+              top-0
+              h-full
+              w-[120px]
+              rotate-12
+              bg-white/10
+              blur-2xl
+            "
+          />
+
+          {/* BRAND NAME */}
+          <motion.h1
+            animate={{
+              opacity: [0.7, 1, 0.7],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut" as const,
+            }}
+            className="
+              relative
+              z-10
+              bg-gradient-to-r
+              from-white
+              via-zinc-200
+              to-zinc-500
+              bg-clip-text
+              text-center
+              text-4xl
+              font-black
+              uppercase
+              tracking-[0.5em]
+              text-transparent
+              sm:text-6xl
+            "
+          >
+            NEXTGRID
+          </motion.h1>
+
+          {/* SUBTITLE */}
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 15,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.4,
+              duration: 1,
+              ease: "easeOut" as const,
+            }}
+            className="
+              mt-5
+              text-center
+              text-[11px]
+              uppercase
+              tracking-[0.9em]
+              text-zinc-400
+            "
+          >
+            STYLE • FASHION • LUXURY
+          </motion.p>
+
+          {/* LOADING BAR */}
+          <div className="relative mt-12 h-[5px] w-[320px] overflow-hidden rounded-full bg-white/10">
+            <motion.div
+              initial={{
+                x: "-100%",
+              }}
+              animate={{
+                x: "100%",
+              }}
+              transition={{
+                duration: 1.3,
+                repeat: Infinity,
+                ease: "easeInOut" as const,
+              }}
+              className="
+                absolute
+                inset-y-0
+                w-1/2
+                rounded-full
+                bg-gradient-to-r
+                from-transparent
+                via-white
+                to-transparent
+              "
+            />
+          </div>
+
+          {/* LOADING TEXT */}
+          <motion.p
+            animate={{
+              opacity: [0.4, 1, 0.4],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut" as const,
+            }}
+            className="
+              mt-6
+              text-center
+              text-[10px]
+              uppercase
+              tracking-[0.5em]
+              text-zinc-500
+            "
+          >
+            Loading Experience
+          </motion.p>
+        </motion.div>
+      </div>
     </div>
   );
 }
