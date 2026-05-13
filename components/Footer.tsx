@@ -68,18 +68,18 @@ const footerLinks = {
   ],
 
   Company: [
-    { name: "About", href: "/about" },
+    { name: "About", href: "/company/about" },
     { name: "Careers", href: "/company/careers" },
     { name: "Stores", href: "/company/stores" },
     { name: "Contact", href: "/company/contact" },
     { name: "Investors", href: "/company/investors" },
-    { name: "Press Media", href: "/company/press" },
+    { name: "Press Media", href: "/company/press-media" },
     { name: "Blog", href: "/company/blog" },
     { name: "Partners", href: "/company/partners" },
   ],
 
   Support: [
-    { name: "Help Center", href: "/support/help" },
+    { name: "Help Center", href: "/support/help-center" },
     { name: "Shipping", href: "/support/shipping" },
     { name: "Returns", href: "/support/returns" },
     { name: "Privacy Policy", href: "/support/privacy" },
