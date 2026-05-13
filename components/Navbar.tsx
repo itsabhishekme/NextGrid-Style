@@ -6,18 +6,11 @@ import {
   ShoppingBag,
   Heart,
   User,
-  ChevronDown,
   Bell,
-  ArrowRight,
   Search,
 } from "lucide-react";
 
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
-
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 const navItems = [
   {
@@ -38,20 +31,12 @@ const navItems = [
     badge: true,
   },
   {
-    name: "Luxury",
-    href: "/luxury",
-    dropdown: true,
-  },
-  {
     name: "Streetwear",
     href: "/streetwear",
   },
 ];
 
 export default function Navbar() {
-  const [luxuryOpen, setLuxuryOpen] =
-    useState(false);
-
   return (
     <>
       <motion.header
@@ -93,7 +78,6 @@ export default function Navbar() {
             lg:px-10
           "
         >
-
           {/* LEFT */}
           <div
             className="
@@ -103,7 +87,6 @@ export default function Navbar() {
               gap-14
             "
           >
-
             {/* LOGO */}
             <Link href="/">
               <motion.div
@@ -161,14 +144,6 @@ export default function Navbar() {
                     delay: index * 0.08,
                   }}
                   className="relative group"
-                  onMouseEnter={() => {
-                    if (item.dropdown)
-                      setLuxuryOpen(true);
-                  }}
-                  onMouseLeave={() => {
-                    if (item.dropdown)
-                      setLuxuryOpen(false);
-                  }}
                 >
                   <Link
                     href={item.href}
@@ -204,10 +179,6 @@ export default function Navbar() {
                         New
                       </span>
                     )}
-
-                    {item.dropdown && (
-                      <ChevronDown size={14} />
-                    )}
                   </Link>
 
                   <span
@@ -223,74 +194,6 @@ export default function Navbar() {
                       group-hover:w-full
                     "
                   />
-
-                  <AnimatePresence>
-                    {item.dropdown &&
-                      luxuryOpen && (
-                        <motion.div
-                          initial={{
-                            opacity: 0,
-                            y: 20,
-                          }}
-                          animate={{
-                            opacity: 1,
-                            y: 0,
-                          }}
-                          exit={{
-                            opacity: 0,
-                            y: 20,
-                          }}
-                          className="
-                            absolute
-                            left-0
-                            top-12
-                            w-[320px]
-                            overflow-hidden
-                            rounded-[32px]
-                            border
-                            border-white/10
-                            bg-black/95
-                            p-6
-                            shadow-2xl
-                            backdrop-blur-3xl
-                          "
-                        >
-                          <div className="space-y-4">
-                            {luxuryDropdown.map(
-                              (drop) => (
-                                <Link
-                                  key={drop.title}
-                                  href={drop.href}
-                                  className="
-                                    group
-                                    flex
-                                    items-center
-                                    justify-between
-                                    rounded-2xl
-                                    border
-                                    border-white/5
-                                    bg-white/[0.03]
-                                    px-5
-                                    py-4
-                                    transition-all
-                                    hover:bg-white
-                                    hover:text-black
-                                  "
-                                >
-                                  <span>
-                                    {drop.title}
-                                  </span>
-
-                                  <ArrowRight
-                                    size={16}
-                                  />
-                                </Link>
-                              )
-                            )}
-                          </div>
-                        </motion.div>
-                      )}
-                  </AnimatePresence>
                 </motion.div>
               ))}
             </div>
@@ -357,7 +260,6 @@ export default function Navbar() {
 
           {/* RIGHT */}
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-5">
-
             {/* DESKTOP SEARCH */}
             <Link
               href="/search"
@@ -395,7 +297,6 @@ export default function Navbar() {
 
             {/* DESKTOP ONLY */}
             <div className="hidden md:flex items-center gap-3">
-
               {/* NOTIFICATION */}
               <Link href="/notifications">
                 <motion.button
