@@ -20,6 +20,11 @@ const poppins = Poppins({
 
   variable: "--font-poppins",
 
+  fallback: [
+    "system-ui",
+    "sans-serif",
+  ],
+
   weight: [
     "100",
     "200",
@@ -119,26 +124,29 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icons/icon-192.webp",
+        url: "/icons/icon-192.png",
 
         sizes: "192x192",
 
-        type: "image/webp",
+        type: "image/png",
       },
+
       {
-        url: "/icons/icon-512.webp",
+        url: "/icons/icon-512.png",
 
         sizes: "512x512",
 
-        type: "image/webp",
+        type: "image/png",
       },
     ],
 
     apple: [
       {
-        url: "/icons/icon-192.webp",
+        url: "/icons/icon-192.png",
 
         sizes: "192x192",
+
+        type: "image/png",
       },
     ],
 
@@ -231,7 +239,7 @@ export default function RootLayout({
             }}
           />
 
-          {/* TOP LEFT GLOW */}
+          {/* PINK GLOW */}
           <div
             className="
               absolute
@@ -256,7 +264,7 @@ export default function RootLayout({
             "
           />
 
-          {/* RIGHT CYAN GLOW */}
+          {/* CYAN GLOW */}
           <div
             className="
               absolute
@@ -363,7 +371,7 @@ export default function RootLayout({
           "
         />
 
-        {/* APP WRAPPER */}
+        {/* APP */}
         <div
           className="
             relative
@@ -374,13 +382,10 @@ export default function RootLayout({
             overflow-x-hidden
           "
         >
-          {/* DESKTOP NAV */}
           <Navbar />
 
-          {/* MOBILE NAV */}
           <MobileNav />
 
-          {/* MAIN */}
           <main
             className="
               relative
@@ -396,7 +401,6 @@ export default function RootLayout({
               md:pb-0
             "
           >
-            {/* CONTAINER */}
             <div
               className="
                 relative
@@ -413,7 +417,6 @@ export default function RootLayout({
                 overflow-x-hidden
               "
             >
-              {/* CONTENT */}
               <div
                 className="
                   min-w-0
@@ -426,39 +429,7 @@ export default function RootLayout({
             </div>
           </main>
 
-          {/* FOOTER */}
           <Footer />
-        </div>
-
-        {/* DESKTOP CENTER LIGHT */}
-        <div
-          className="
-            pointer-events-none
-            fixed
-            inset-0
-            hidden
-            lg:block
-            z-[1]
-          "
-        >
-          <div
-            className="
-              absolute
-              left-1/2
-              top-1/2
-
-              h-[600px]
-              w-[600px]
-
-              -translate-x-1/2
-              -translate-y-1/2
-
-              rounded-full
-              bg-white/[0.03]
-
-              blur-[180px]
-            "
-          />
         </div>
 
         {/* MOBILE SAFE AREA */}
@@ -474,25 +445,6 @@ export default function RootLayout({
             w-full
 
             bg-black
-          "
-        />
-
-        {/* MOBILE BOTTOM BLUR */}
-        <div
-          className="
-            pointer-events-none
-            fixed
-            bottom-0
-            left-0
-
-            h-24
-            w-full
-
-            bg-gradient-to-t
-            from-black
-            to-transparent
-
-            md:hidden
           "
         />
       </body>

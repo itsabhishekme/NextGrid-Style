@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* =========================================================
+   RESET
+========================================================= */
+
 *,
 *::before,
 *::after {
@@ -21,21 +25,120 @@ body {
 
   scroll-behavior: smooth;
 
+  /* BEAUTIFUL FONT RENDERING */
+  text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* MOBILE FONT FIX */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body {
   position: relative;
+
+  min-height: 100vh;
+
+  font-family:
+    var(--font-poppins),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.01em;
+
+  background: #000;
+  color: white;
 }
+
+/* =========================================================
+   MOBILE FONT BEAUTY
+========================================================= */
+
+html,
+body,
+input,
+textarea,
+button,
+select {
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+/* =========================================================
+   MOBILE TYPOGRAPHY IMPROVEMENT
+========================================================= */
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    letter-spacing: 0.015em;
+
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.02em;
+
+    line-height: 1.1;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   IOS INPUT ZOOM FIX
+========================================================= */
+
+input,
+textarea,
+select {
+  font-size: 16px;
+
+  font-family: inherit;
+}
+
+/* =========================================================
+   MEDIA
+========================================================= */
 
 img,
 video,
 canvas,
-svg {
+svg,
+picture {
   max-width: 100%;
   height: auto;
+
   display: block;
 }
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 button,
 input,
@@ -44,26 +147,49 @@ select {
   font: inherit;
 }
 
+/* =========================================================
+   LINKS
+========================================================= */
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* CRITICAL FIX */
+/* =========================================================
+   NEXT FIX
+========================================================= */
+
 #__next,
 main {
   width: 100%;
   max-width: 100%;
+
   overflow-x: hidden;
 }
 
-/* Prevent fixed blur overflow */
+/* =========================================================
+   BLUR FIX
+========================================================= */
+
 .blur-layer {
   overflow: hidden;
+
   pointer-events: none;
 }
 
-/* iPhone Fix */
-html {
-  -webkit-text-size-adjust: 100%;
+/* =========================================================
+   MOBILE SAFE FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  * {
+    max-width: 100%;
+  }
 }
