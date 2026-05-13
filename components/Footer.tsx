@@ -60,7 +60,7 @@ const footerLinks = {
     { name: "Men", href: "/men" },
     { name: "Women", href: "/women" },
     { name: "Kids", href: "/kids" },
-    { name: "Luxury", href: "/luxury" },
+    { name: "Magazine", href: "/magazine" },
     { name: "Trending", href: "/trending" },
     { name: "Accessories", href: "/accessories" },
     { name: "New Arrivals", href: "/new-arrivals" },
