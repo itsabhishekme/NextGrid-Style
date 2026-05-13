@@ -23,6 +23,15 @@ export default function Hero() {
     },
   ];
 
+  const gallery = [
+    "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=3000&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=2400&auto=format&fit=crop",
+  ];
+
   return (
     <section className="relative overflow-hidden bg-black text-white">
       {/* BACKGROUND */}
@@ -61,13 +70,11 @@ export default function Hero() {
           <img
             src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=3000&auto=format&fit=crop"
             alt="Fashion"
-            className="h-[900px] w-full object-cover transition duration-700 hover:scale-105"
+            className="h-[950px] w-full object-cover transition duration-700 hover:scale-105"
           />
 
-          {/* OVERLAY */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
-          {/* TITLE */}
           <div className="absolute bottom-10 left-10">
             <h1 className="text-6xl font-black tracking-[0.2em] md:text-8xl">
               FASHION
@@ -92,7 +99,7 @@ export default function Hero() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-[500px] w-full object-cover transition duration-700 group-hover:scale-110"
+                  className="h-[550px] w-full object-cover transition duration-700 group-hover:scale-110"
                 />
               </div>
 
@@ -107,59 +114,98 @@ export default function Hero() {
 
         {/* LARGE IMAGE SECTION */}
         <div className="mt-16 grid gap-8 md:grid-cols-2">
-          {/* MEN */}
           <div className="overflow-hidden rounded-[40px] border border-white/10">
             <img
               src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2600&auto=format&fit=crop"
               alt="Men Fashion"
-              className="h-[650px] w-full object-cover transition duration-700 hover:scale-105"
+              className="h-[700px] w-full object-cover transition duration-700 hover:scale-105"
             />
           </div>
 
-          {/* WOMEN */}
           <div className="overflow-hidden rounded-[40px] border border-white/10">
             <img
               src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2600&auto=format&fit=crop"
               alt="Women Fashion"
-              className="h-[650px] w-full object-cover transition duration-700 hover:scale-105"
+              className="h-[700px] w-full object-cover transition duration-700 hover:scale-105"
             />
           </div>
         </div>
 
-        {/* CHILDREN BANNER */}
+        {/* BANNER */}
         <div className="mt-16 overflow-hidden rounded-[50px] border border-white/10">
           <img
             src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=3200&auto=format&fit=crop"
-            alt="Children Fashion"
-            className="h-[750px] w-full object-cover transition duration-700 hover:scale-105"
+            alt="Fashion"
+            className="h-[800px] w-full object-cover transition duration-700 hover:scale-105"
           />
         </div>
 
         {/* EXTRA GRID */}
         <div className="mt-16 grid gap-8 md:grid-cols-3">
-          <div className="overflow-hidden rounded-[35px] border border-white/10">
+          {gallery.map((img, index) => (
+            <motion.div
+              key={index}
+              whileHover={{
+                y: -8,
+              }}
+              className="overflow-hidden rounded-[35px] border border-white/10"
+            >
+              <img
+                src={img}
+                alt="Fashion"
+                className="h-[500px] w-full object-cover transition duration-700 hover:scale-110"
+              />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* FULL WIDTH LUXURY IMAGE */}
+        <div className="mt-16 overflow-hidden rounded-[50px] border border-white/10">
+          <img
+            src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=3200&auto=format&fit=crop"
+            alt="Luxury Fashion"
+            className="h-[900px] w-full object-cover transition duration-700 hover:scale-105"
+          />
+        </div>
+
+        {/* DOUBLE GRID */}
+        <div className="mt-16 grid gap-8 md:grid-cols-2">
+          <div className="overflow-hidden rounded-[40px] border border-white/10">
             <img
-              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2400&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2600&auto=format&fit=crop"
               alt="Fashion"
-              className="h-[500px] w-full object-cover transition duration-700 hover:scale-110"
+              className="h-[650px] w-full object-cover transition duration-700 hover:scale-110"
             />
           </div>
 
-          <div className="overflow-hidden rounded-[35px] border border-white/10">
+          <div className="overflow-hidden rounded-[40px] border border-white/10">
             <img
-              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=2400&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2600&auto=format&fit=crop"
               alt="Fashion"
-              className="h-[500px] w-full object-cover transition duration-700 hover:scale-110"
+              className="h-[650px] w-full object-cover transition duration-700 hover:scale-110"
             />
           </div>
+        </div>
 
-          <div className="overflow-hidden rounded-[35px] border border-white/10">
-            <img
-              src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=2400&auto=format&fit=crop"
-              alt="Fashion"
-              className="h-[500px] w-full object-cover transition duration-700 hover:scale-110"
-            />
-          </div>
+        {/* FINAL GALLERY */}
+        <div className="mt-16 grid gap-8 md:grid-cols-4">
+          {[
+            "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=2000&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=2000&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=2000&auto=format&fit=crop",
+          ].map((img, index) => (
+            <div
+              key={index}
+              className="overflow-hidden rounded-[30px] border border-white/10"
+            >
+              <img
+                src={img}
+                alt="Fashion"
+                className="h-[420px] w-full object-cover transition duration-700 hover:scale-110"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
