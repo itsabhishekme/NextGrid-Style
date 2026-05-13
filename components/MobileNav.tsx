@@ -6,19 +6,22 @@ import { usePathname } from "next/navigation";
 
 import {
   Home,
-  ShoppingBag,
+  Search,
   Heart,
   User,
-  Search,
+  ShoppingBag,
+  Crown,
   Sparkles,
+  Bell,
+  Shirt,
   Menu,
   X,
-  ArrowRight,
   Star,
-  Bell,
-  Crown,
-  Shirt,
-  Gem,
+  ChevronRight,
+  Compass,
+  Flame,
+  Briefcase,
+  Watch,
 } from "lucide-react";
 
 import {
@@ -53,46 +56,72 @@ const navItems = [
   },
 
   {
-    href: "/login",
+    href: "/profile",
     icon: User,
   },
 ];
 
-const dropdownItems = [
+const categories = [
   {
-    title: "Men Fashion",
+    title: "Men",
+    subtitle: "Premium Essentials",
     href: "/men",
     icon: Shirt,
   },
 
   {
-    title: "Women Fashion",
+    title: "Women",
+    subtitle: "Luxury Collection",
     href: "/women",
     icon: Sparkles,
   },
 
   {
-    title: "Children",
-    href: "/children",
-    icon: Star,
-  },
-
-  {
     title: "Streetwear",
+    subtitle: "Urban Culture",
     href: "/streetwear",
-    icon: Gem,
+    icon: Flame,
   },
 
   {
-    title: "Luxury Collection",
+    title: "Accessories",
+    subtitle: "Minimal Fashion",
+    href: "/accessories",
+    icon: Watch,
+  },
+
+  {
+    title: "Luxury",
+    subtitle: "Exclusive Pieces",
     href: "/luxury",
     icon: Crown,
   },
 
   {
-    title: "New Arrivals",
-    href: "/new-arrivals",
+    title: "Explore",
+    subtitle: "Trending Styles",
+    href: "/explore",
+    icon: Compass,
+  },
+];
+
+const quickActions = [
+  {
+    title: "Orders",
+    href: "/orders",
+    icon: Briefcase,
+  },
+
+  {
+    title: "Alerts",
+    href: "/notifications",
     icon: Bell,
+  },
+
+  {
+    title: "Featured",
+    href: "/featured",
+    icon: Star,
   },
 ];
 
@@ -110,13 +139,8 @@ export default function MobileNav() {
   }, []);
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow =
-        "hidden";
-    } else {
-      document.body.style.overflow =
-        "auto";
-    }
+    document.body.style.overflow =
+      menuOpen ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow =
@@ -151,7 +175,7 @@ export default function MobileNav() {
               fixed
               inset-0
               z-[9980]
-              bg-black/90
+              bg-black/85
               backdrop-blur-2xl
               md:hidden
             "
@@ -165,8 +189,8 @@ export default function MobileNav() {
           <motion.div
             initial={{
               opacity: 0,
-              y: 120,
-              scale: 0.88,
+              y: 80,
+              scale: 0.92,
             }}
             animate={{
               opacity: 1,
@@ -175,30 +199,29 @@ export default function MobileNav() {
             }}
             exit={{
               opacity: 0,
-              y: 120,
-              scale: 0.88,
+              y: 80,
+              scale: 0.92,
             }}
             transition={{
               duration: 0.35,
             }}
             className="
               fixed
-              bottom-28
+              bottom-[105px]
               left-1/2
               z-[9990]
               w-[94%]
               max-w-md
               -translate-x-1/2
               overflow-hidden
-              rounded-[42px]
+              rounded-[36px]
               border
               border-white/10
               bg-gradient-to-b
               from-zinc-900
               via-black
               to-zinc-950
-              p-5
-              shadow-[0_20px_120px_rgba(0,0,0,0.85)]
+              shadow-[0_25px_100px_rgba(0,0,0,0.9)]
               backdrop-blur-3xl
               md:hidden
             "
@@ -206,65 +229,149 @@ export default function MobileNav() {
             {/* HEADER */}
             <div
               className="
-                mb-7
-                flex
-                items-center
-                justify-between
+                relative
+                overflow-hidden
+                border-b
+                border-white/10
+                p-5
               "
             >
-              <div>
-                <p
-                  className="
-                    text-xs
-                    uppercase
-                    tracking-[0.35em]
-                    text-zinc-500
-                  "
-                >
-                  NEXTGRID STYLE
-                </p>
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-r
+                  from-white/[0.05]
+                  via-transparent
+                  to-white/[0.02]
+                "
+              />
 
-                <h2
+              <div
+                className="
+                  relative
+                  flex
+                  items-center
+                  justify-between
+                "
+              >
+                <div>
+                  <p
+                    className="
+                      text-[10px]
+                      uppercase
+                      tracking-[0.38em]
+                      text-zinc-500
+                    "
+                  >
+                    Fashion Space
+                  </p>
+
+                  <h2
+                    className="
+                      mt-2
+                      text-2xl
+                      font-black
+                      uppercase
+                      tracking-[0.14em]
+                      text-white
+                    "
+                  >
+                    Discover
+                  </h2>
+                </div>
+
+                <motion.button
+                  whileTap={{
+                    scale: 0.92,
+                  }}
+                  onClick={() =>
+                    setMenuOpen(false)
+                  }
                   className="
-                    mt-2
-                    text-3xl
-                    font-black
-                    uppercase
-                    tracking-[0.15em]
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/[0.05]
                     text-white
                   "
                 >
-                  Explore
-                </h2>
+                  <X size={22} />
+                </motion.button>
               </div>
-
-              <motion.button
-                whileTap={{
-                  scale: 0.92,
-                }}
-                onClick={() =>
-                  setMenuOpen(false)
-                }
-                className="
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-3xl
-                  border
-                  border-white/10
-                  bg-white/[0.05]
-                  text-white
-                "
-              >
-                <X size={24} />
-              </motion.button>
             </div>
 
-            {/* MENU ITEMS */}
-            <div className="grid grid-cols-2 gap-4">
-              {dropdownItems.map(
+            {/* QUICK ACTIONS */}
+            <div className="px-4 pt-4">
+              <div className="grid grid-cols-3 gap-3">
+                {quickActions.map(
+                  (item, index) => {
+                    const Icon = item.icon;
+
+                    return (
+                      <motion.div
+                        key={item.title}
+                        initial={{
+                          opacity: 0,
+                          y: 15,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        transition={{
+                          delay:
+                            index * 0.05,
+                        }}
+                      >
+                        <Link
+                          href={item.href}
+                          className="
+                            flex
+                            flex-col
+                            items-center
+                            justify-center
+                            gap-2
+                            rounded-[24px]
+                            border
+                            border-white/10
+                            bg-white/[0.04]
+                            px-3
+                            py-4
+                            transition-all
+                            duration-300
+                            hover:bg-white
+                            hover:text-black
+                          "
+                        >
+                          <Icon size={20} />
+
+                          <span
+                            className="
+                              text-[10px]
+                              font-semibold
+                              uppercase
+                              tracking-[0.14em]
+                            "
+                          >
+                            {item.title}
+                          </span>
+                        </Link>
+                      </motion.div>
+                    );
+                  }
+                )}
+              </div>
+            </div>
+
+            {/* CATEGORY LIST */}
+            <div className="space-y-3 px-4 py-5">
+              {categories.map(
                 (item, index) => {
                   const Icon = item.icon;
 
@@ -273,11 +380,11 @@ export default function MobileNav() {
                       key={item.title}
                       initial={{
                         opacity: 0,
-                        y: 20,
+                        x: 20,
                       }}
                       animate={{
                         opacity: 1,
-                        y: 0,
+                        x: 0,
                       }}
                       transition={{
                         delay:
@@ -294,18 +401,15 @@ export default function MobileNav() {
                         className="
                           group
                           flex
-                          flex-col
                           items-center
-                          justify-center
-                          gap-4
-                          rounded-[30px]
+                          justify-between
+                          rounded-[24px]
                           border
-                          border-white/5
+                          border-white/10
                           bg-white/[0.03]
-                          p-6
+                          p-4
                           transition-all
                           duration-300
-                          hover:border-white/20
                           hover:bg-white
                           hover:text-black
                         "
@@ -313,31 +417,56 @@ export default function MobileNav() {
                         <div
                           className="
                             flex
-                            h-16
-                            w-16
                             items-center
-                            justify-center
-                            rounded-3xl
-                            bg-white/[0.06]
-                            transition-all
-                            duration-300
-                            group-hover:bg-black
-                            group-hover:text-white
+                            gap-4
                           "
                         >
-                          <Icon size={28} />
+                          <div
+                            className="
+                              flex
+                              h-12
+                              w-12
+                              items-center
+                              justify-center
+                              rounded-2xl
+                              bg-white/[0.05]
+                              transition-all
+                              duration-300
+                              group-hover:bg-black
+                              group-hover:text-white
+                            "
+                          >
+                            <Icon size={22} />
+                          </div>
+
+                          <div>
+                            <h3
+                              className="
+                                text-sm
+                                font-bold
+                                uppercase
+                                tracking-[0.12em]
+                              "
+                            >
+                              {item.title}
+                            </h3>
+
+                            <p
+                              className="
+                                mt-1
+                                text-[11px]
+                                text-zinc-500
+                                group-hover:text-zinc-700
+                              "
+                            >
+                              {item.subtitle}
+                            </p>
+                          </div>
                         </div>
 
-                        <span
-                          className="
-                            text-xs
-                            font-bold
-                            uppercase
-                            tracking-[0.18em]
-                          "
-                        >
-                          {item.title}
-                        </span>
+                        <ChevronRight
+                          size={18}
+                        />
                       </Link>
                     </motion.div>
                   );
@@ -348,10 +477,10 @@ export default function MobileNav() {
         )}
       </AnimatePresence>
 
-      {/* BOTTOM NAVBAR */}
+      {/* BOTTOM NAV */}
       <motion.nav
         initial={{
-          y: 120,
+          y: 80,
           opacity: 0,
         }}
         animate={{
@@ -359,42 +488,45 @@ export default function MobileNav() {
           opacity: 1,
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.45,
         }}
         className="
           fixed
-          bottom-4
+          bottom-3
           left-1/2
           z-[9999]
           flex
-          h-[84px]
+          h-[82px]
           w-[94%]
           max-w-md
           -translate-x-1/2
           items-center
-          justify-around
-          rounded-[34px]
+          justify-between
+          rounded-[32px]
           border
           border-white/10
-          bg-black/80
-          px-3
+          bg-black/75
+          px-2
+          shadow-[0_15px_70px_rgba(0,0,0,0.8)]
           backdrop-blur-3xl
-          shadow-[0_10px_60px_rgba(0,0,0,0.7)]
           md:hidden
         "
+        style={{
+          paddingBottom:
+            "env(safe-area-inset-bottom)",
+        }}
       >
-        {/* MENU BUTTON */}
+        {/* MENU */}
         <motion.button
           whileTap={{
             scale: 0.92,
           }}
-          onClick={() => {
+          onClick={() =>
             setMenuOpen(
               (prev) => !prev
-            );
-          }}
+            )
+          }
           className="
-            relative
             flex
             h-14
             w-14
@@ -403,13 +535,14 @@ export default function MobileNav() {
             rounded-2xl
             border
             border-white/10
-            bg-white/[0.05]
-            text-zinc-300
+            bg-gradient-to-br
+            from-white/[0.1]
+            to-white/[0.03]
+            text-white
           "
         >
           <AnimatePresence
             mode="wait"
-            initial={false}
           >
             {menuOpen ? (
               <motion.div
@@ -425,9 +558,6 @@ export default function MobileNav() {
                 exit={{
                   rotate: 180,
                   opacity: 0,
-                }}
-                transition={{
-                  duration: 0.25,
                 }}
               >
                 <X size={24} />
@@ -447,9 +577,6 @@ export default function MobileNav() {
                   rotate: -180,
                   opacity: 0,
                 }}
-                transition={{
-                  duration: 0.25,
-                }}
               >
                 <Menu size={24} />
               </motion.div>
@@ -468,12 +595,6 @@ export default function MobileNav() {
             <Link
               key={item.href}
               href={item.href}
-              className="
-                relative
-                flex
-                items-center
-                justify-center
-              "
             >
               <motion.div
                 whileTap={{
@@ -489,11 +610,16 @@ export default function MobileNav() {
                 {active && (
                   <motion.div
                     layoutId="activeTab"
+                    transition={{
+                      type: "spring",
+                      bounce: 0.2,
+                      duration: 0.5,
+                    }}
                     className="
                       absolute
                       inset-0
-                      rounded-3xl
-                      bg-white/[0.08]
+                      rounded-2xl
+                      bg-white
                     "
                   />
                 )}
@@ -501,6 +627,7 @@ export default function MobileNav() {
                 <div
                   className={`
                     relative
+                    z-10
                     flex
                     h-14
                     w-14
@@ -513,24 +640,15 @@ export default function MobileNav() {
                     ${
                       active
                         ? `
-                        bg-white
                         text-black
-                        shadow-[0_0_30px_rgba(255,255,255,0.45)]
                       `
                         : `
-                        bg-white/[0.04]
                         text-zinc-400
                       `
                     }
                   `}
                 >
-                  <Icon
-                    size={22}
-                    className="
-                      relative
-                      z-10
-                    "
-                  />
+                  <Icon size={22} />
                 </div>
               </motion.div>
             </Link>
@@ -557,7 +675,7 @@ export default function MobileNav() {
         className="
           fixed
           bottom-28
-          right-5
+          right-4
           z-[9999]
           md:hidden
         "
@@ -570,8 +688,8 @@ export default function MobileNav() {
             className="
               relative
               flex
-              h-[68px]
-              w-[68px]
+              h-[64px]
+              w-[64px]
               items-center
               justify-center
               rounded-full
@@ -579,11 +697,11 @@ export default function MobileNav() {
               border-white/10
               bg-white
               text-black
-              shadow-[0_10px_60px_rgba(255,255,255,0.25)]
+              shadow-[0_12px_50px_rgba(255,255,255,0.28)]
             "
           >
             <ShoppingBag
-              size={26}
+              size={24}
             />
 
             <div
@@ -592,18 +710,18 @@ export default function MobileNav() {
                 -right-1
                 -top-1
                 flex
-                h-7
-                w-7
+                h-6
+                w-6
                 items-center
                 justify-center
                 rounded-full
                 bg-red-500
-                text-[11px]
+                text-[10px]
                 font-black
                 text-white
               "
             >
-              5
+              8
             </div>
           </motion.button>
         </Link>

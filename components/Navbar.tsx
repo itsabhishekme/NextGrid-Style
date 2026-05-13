@@ -9,6 +9,7 @@ import {
   ChevronDown,
   Bell,
   ArrowRight,
+  Search,
 } from "lucide-react";
 
 import {
@@ -90,7 +91,6 @@ export default function Navbar() {
           left-0
           z-50
           w-full
-          overflow-x-hidden
           border-b
           border-white/10
           bg-black/40
@@ -114,7 +114,14 @@ export default function Navbar() {
         >
 
           {/* LEFT */}
-          <div className="flex items-center gap-4 lg:gap-14">
+          <div
+            className="
+              hidden
+              lg:flex
+              items-center
+              gap-14
+            "
+          >
 
             {/* LOGO */}
             <Link href="/">
@@ -131,9 +138,7 @@ export default function Navbar() {
                     via-zinc-300
                     to-zinc-500
                     bg-clip-text
-                    text-lg
-                    sm:text-2xl
-                    lg:text-3xl
+                    text-3xl
                     font-black
                     uppercase
                     tracking-[0.22em]
@@ -147,8 +152,6 @@ export default function Navbar() {
                 <p
                   className="
                     mt-1
-                    hidden
-                    sm:block
                     text-[9px]
                     uppercase
                     tracking-[0.45em]
@@ -161,7 +164,7 @@ export default function Navbar() {
             </Link>
 
             {/* DESKTOP MENU */}
-            <div className="hidden items-center gap-8 lg:flex">
+            <div className="flex items-center gap-8">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -312,8 +315,102 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* MOBILE CENTER LOGO */}
+          <div
+            className="
+              absolute
+              left-1/2
+              top-1/2
+              flex
+              -translate-x-1/2
+              -translate-y-1/2
+              items-center
+              justify-center
+              lg:hidden
+            "
+          >
+            <Link href="/">
+              <motion.div
+                whileTap={{
+                  scale: 0.97,
+                }}
+                className="
+                  flex
+                  flex-col
+                  items-center
+                  justify-center
+                "
+              >
+                <h1
+                  className="
+                    bg-gradient-to-r
+                    from-white
+                    via-zinc-300
+                    to-zinc-500
+                    bg-clip-text
+                    text-[20px]
+                    font-black
+                    uppercase
+                    tracking-[0.24em]
+                    text-transparent
+                    whitespace-nowrap
+                  "
+                >
+                  NextGrid
+                </h1>
+
+                <p
+                  className="
+                    mt-[2px]
+                    text-[7px]
+                    uppercase
+                    tracking-[0.38em]
+                    text-zinc-500
+                  "
+                >
+                  Fashion Studio
+                </p>
+              </motion.div>
+            </Link>
+          </div>
+
           {/* RIGHT */}
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-5">
+
+            {/* DESKTOP SEARCH */}
+            <Link
+              href="/search"
+              className="hidden lg:block"
+            >
+              <motion.button
+                whileTap={{
+                  scale: 0.95,
+                }}
+                whileHover={{
+                  scale: 1.04,
+                }}
+                className="
+                  flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/5
+                  text-zinc-300
+                  shadow-[0_8px_25px_rgba(0,0,0,0.35)]
+                  backdrop-blur-2xl
+                  transition-all
+                  duration-300
+                  hover:bg-white
+                  hover:text-black
+                "
+              >
+                <Search size={18} />
+              </motion.button>
+            </Link>
 
             {/* DESKTOP ONLY */}
             <div className="hidden md:flex items-center gap-3">
@@ -407,7 +504,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* DESKTOP CART ONLY */}
+            {/* DESKTOP CART */}
             <Link
               href="/cart"
               className="hidden md:block"
