@@ -59,11 +59,12 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    "https://nextgridstyle.com"
+    "https://nextgridstyle.vercel.app"
   ),
 
   title: {
-    default: "NextGrid Style Fashion",
+    default:
+      "NextGrid Style Fashion",
 
     template:
       "%s | NextGrid Style Fashion",
@@ -73,6 +74,26 @@ export const metadata: Metadata = {
     "Luxury futuristic fashion ecommerce platform powered by Next.js and Capacitor.",
 
   manifest: "/manifest.json",
+
+  icons: {
+    icon:
+      "/icons/icon-192.webp",
+
+    shortcut:
+      "/icons/icon-192.webp",
+
+    apple:
+      "/icons/apple-touch-icon.png",
+  },
+
+  appleWebApp: {
+    capable: true,
+
+    statusBarStyle:
+      "black-translucent",
+
+    title: "NextGrid",
+  },
 
   keywords: [
     "NextGrid",
@@ -89,8 +110,6 @@ export const viewport: Viewport = {
   width: "device-width",
 
   initialScale: 1,
-
-  maximumScale: 1,
 
   viewportFit: "cover",
 
@@ -136,15 +155,17 @@ export default function RootLayout({
       >
         <MobileWrapper>
 
-          {/* MOBILE FIXES */}
           <TouchFix />
+
           <ScrollFix />
 
           <TouchWrapper>
+
             <GestureLayer>
+
               <SafeArea>
 
-                {/* PREMIUM BACKGROUND */}
+                {/* BACKGROUND */}
                 <div
                   className="
                     pointer-events-none
@@ -175,6 +196,7 @@ export default function RootLayout({
                           transparent 1px
                         )
                       `,
+
                       backgroundSize:
                         "80px 80px",
                     }}
@@ -255,7 +277,7 @@ export default function RootLayout({
                     "
                   />
 
-                  {/* MOBILE PURPLE GLOW */}
+                  {/* PURPLE MOBILE GLOW */}
                   <div
                     className="
                       absolute
@@ -314,6 +336,7 @@ export default function RootLayout({
 
                 {/* APP */}
                 <MotionWrapper>
+
                   <ResponsiveLayout>
 
                     <div
@@ -327,17 +350,17 @@ export default function RootLayout({
                         overflow-x-hidden
                       "
                     >
-                      {/* DESKTOP NAVBAR */}
+                      {/* DESKTOP NAV */}
                       <div className="hidden md:block">
                         <Navbar />
                       </div>
 
-                      {/* MOBILE TOP BAR */}
+                      {/* MOBILE TOPBAR */}
                       <div className="md:hidden">
                         <MobileTopBar />
                       </div>
 
-                      {/* MAIN CONTENT */}
+                      {/* MAIN */}
                       <main
                         className="
                           relative
@@ -372,6 +395,7 @@ export default function RootLayout({
                           "
                         >
                           <MobileGrid>
+
                             <div
                               className="
                                 min-w-0
@@ -381,24 +405,29 @@ export default function RootLayout({
                             >
                               {children}
                             </div>
+
                           </MobileGrid>
                         </div>
                       </main>
 
-                      {/* MOBILE BOTTOM NAV */}
+                      {/* MOBILE NAV */}
                       <div className="md:hidden">
                         <MobileBottomNav />
                       </div>
 
                       {/* FOOTER */}
                       <Footer />
+
                     </div>
 
                   </ResponsiveLayout>
+
                 </MotionWrapper>
 
               </SafeArea>
+
             </GestureLayer>
+
           </TouchWrapper>
 
         </MobileWrapper>
