@@ -7,9 +7,19 @@ import "./globals.css";
 
 import { Poppins } from "next/font/google";
 
+/* DESKTOP COMPONENTS */
 import Navbar from "@/components/Navbar";
-import MobileNav from "@/components/MobileNav";
 import Footer from "@/components/Footer";
+
+/* RESPONSIVE COMPONENTS */
+import MotionWrapper from "@/components/MotionWrapper";
+import ResponsiveLayout from "@/components/ResponsiveLayout";
+
+/* MOBILE COMPONENTS */
+import MobileWrapper from "@/components/mobile/wrapper/MobileWrapper";
+import TouchWrapper from "@/components/mobile/wrapper/TouchWrapper";
+
+import MobileGrid from "@/components/mobile/responsive/MobileGrid";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -202,251 +212,270 @@ export default function RootLayout({
           selection:text-black
         `}
       >
-        {/* PREMIUM BACKGROUND */}
-        <div
-          className="
-            pointer-events-none
-            fixed
-            inset-0
-            -z-50
-            overflow-hidden
-          "
-        >
-          {/* GRID */}
-          <div
-            className="
-              absolute
-              inset-0
-              opacity-[0.035]
-            "
-            style={{
-              backgroundImage: `
-                linear-gradient(
-                  to right,
-                  rgba(255,255,255,0.06) 1px,
-                  transparent 1px
-                ),
+        {/* MOBILE WRAPPERS */}
+        <MobileWrapper>
+          <TouchWrapper>
 
-                linear-gradient(
-                  to bottom,
-                  rgba(255,255,255,0.06) 1px,
-                  transparent 1px
-                )
-              `,
-
-              backgroundSize:
-                "80px 80px",
-            }}
-          />
-
-          {/* PINK GLOW */}
-          <div
-            className="
-              absolute
-              left-[-140px]
-              top-[-140px]
-
-              h-[320px]
-              w-[320px]
-
-              rounded-full
-              bg-pink-500/20
-
-              blur-[90px]
-
-              sm:h-[420px]
-              sm:w-[420px]
-
-              md:h-[600px]
-              md:w-[600px]
-
-              md:blur-[150px]
-            "
-          />
-
-          {/* CYAN GLOW */}
-          <div
-            className="
-              absolute
-              right-[-160px]
-              top-[15%]
-
-              h-[320px]
-              w-[320px]
-
-              rounded-full
-              bg-cyan-500/20
-
-              blur-[90px]
-
-              sm:h-[420px]
-              sm:w-[420px]
-
-              md:h-[620px]
-              md:w-[620px]
-
-              md:blur-[160px]
-            "
-          />
-
-          {/* CENTER LIGHT */}
-          <div
-            className="
-              absolute
-              left-1/2
-              top-1/2
-
-              h-[220px]
-              w-[220px]
-
-              -translate-x-1/2
-              -translate-y-1/2
-
-              rounded-full
-              bg-white/[0.05]
-
-              blur-[80px]
-
-              md:h-[480px]
-              md:w-[480px]
-
-              md:blur-[140px]
-            "
-          />
-
-          {/* MOBILE PURPLE GLOW */}
-          <div
-            className="
-              absolute
-              bottom-[-100px]
-              left-1/2
-
-              h-[240px]
-              w-[240px]
-
-              -translate-x-1/2
-
-              rounded-full
-              bg-violet-500/20
-
-              blur-[90px]
-
-              md:hidden
-            "
-          />
-
-          {/* NOISE */}
-          <div
-            className="
-              absolute
-              inset-0
-              opacity-[0.02]
-              mix-blend-soft-light
-            "
-            style={{
-              backgroundImage:
-                "radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px)",
-
-              backgroundSize:
-                "4px 4px",
-            }}
-          />
-        </div>
-
-        {/* TOP LIGHT BAR */}
-        <div
-          className="
-            fixed
-            left-0
-            top-0
-            z-[200]
-
-            h-[2px]
-            w-full
-
-            bg-gradient-to-r
-            from-transparent
-            via-white
-            to-transparent
-          "
-        />
-
-        {/* APP */}
-        <div
-          className="
-            relative
-            flex
-            min-h-screen
-            w-full
-            flex-col
-            overflow-x-hidden
-          "
-        >
-          <Navbar />
-
-          <MobileNav />
-
-          <main
-            className="
-              relative
-              z-10
-              flex-1
-              w-full
-
-              overflow-x-hidden
-
-              pt-[72px]
-
-              pb-[110px]
-              md:pb-0
-            "
-          >
+            {/* PREMIUM BACKGROUND */}
             <div
               className="
-                relative
-                mx-auto
-                w-full
-                max-w-[1920px]
-
-                px-4
-                sm:px-5
-                md:px-6
-                lg:px-8
-                xl:px-10
-
-                overflow-x-hidden
+                pointer-events-none
+                fixed
+                inset-0
+                -z-50
+                overflow-hidden
               "
             >
+              {/* GRID */}
               <div
                 className="
-                  min-w-0
-                  w-full
-                  break-words
+                  absolute
+                  inset-0
+                  opacity-[0.035]
                 "
-              >
-                {children}
-              </div>
+                style={{
+                  backgroundImage: `
+                    linear-gradient(
+                      to right,
+                      rgba(255,255,255,0.06) 1px,
+                      transparent 1px
+                    ),
+
+                    linear-gradient(
+                      to bottom,
+                      rgba(255,255,255,0.06) 1px,
+                      transparent 1px
+                    )
+                  `,
+
+                  backgroundSize:
+                    "80px 80px",
+                }}
+              />
+
+              {/* PINK GLOW */}
+              <div
+                className="
+                  absolute
+                  left-[-140px]
+                  top-[-140px]
+
+                  h-[320px]
+                  w-[320px]
+
+                  rounded-full
+                  bg-pink-500/20
+
+                  blur-[90px]
+
+                  sm:h-[420px]
+                  sm:w-[420px]
+
+                  md:h-[600px]
+                  md:w-[600px]
+
+                  md:blur-[150px]
+                "
+              />
+
+              {/* CYAN GLOW */}
+              <div
+                className="
+                  absolute
+                  right-[-160px]
+                  top-[15%]
+
+                  h-[320px]
+                  w-[320px]
+
+                  rounded-full
+                  bg-cyan-500/20
+
+                  blur-[90px]
+
+                  sm:h-[420px]
+                  sm:w-[420px]
+
+                  md:h-[620px]
+                  md:w-[620px]
+
+                  md:blur-[160px]
+                "
+              />
+
+              {/* CENTER LIGHT */}
+              <div
+                className="
+                  absolute
+                  left-1/2
+                  top-1/2
+
+                  h-[220px]
+                  w-[220px]
+
+                  -translate-x-1/2
+                  -translate-y-1/2
+
+                  rounded-full
+                  bg-white/[0.05]
+
+                  blur-[80px]
+
+                  md:h-[480px]
+                  md:w-[480px]
+
+                  md:blur-[140px]
+                "
+              />
+
+              {/* MOBILE PURPLE GLOW */}
+              <div
+                className="
+                  absolute
+                  bottom-[-100px]
+                  left-1/2
+
+                  h-[240px]
+                  w-[240px]
+
+                  -translate-x-1/2
+
+                  rounded-full
+                  bg-violet-500/20
+
+                  blur-[90px]
+
+                  md:hidden
+                "
+              />
+
+              {/* NOISE */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  opacity-[0.02]
+                  mix-blend-soft-light
+                "
+                style={{
+                  backgroundImage:
+                    "radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px)",
+
+                  backgroundSize:
+                    "4px 4px",
+                }}
+              />
             </div>
-          </main>
 
-          <Footer />
-        </div>
+            {/* TOP LIGHT BAR */}
+            <div
+              className="
+                fixed
+                left-0
+                top-0
+                z-[200]
 
-        {/* MOBILE SAFE AREA */}
-        <div
-          className="
-            fixed
-            bottom-0
-            left-0
+                h-[2px]
+                w-full
 
-            z-[5]
+                bg-gradient-to-r
+                from-transparent
+                via-white
+                to-transparent
+              "
+            />
 
-            h-[env(safe-area-inset-bottom)]
-            w-full
+            {/* APP */}
+            <MotionWrapper>
+              <ResponsiveLayout>
 
-            bg-black
-          "
-        />
+                <div
+                  className="
+                    relative
+                    flex
+                    min-h-screen
+                    w-full
+                    flex-col
+
+                    overflow-x-hidden
+                  "
+                >
+                  {/* HEADER */}
+                  <Navbar />
+
+                  {/* MAIN CONTENT */}
+                  <main
+                    className="
+                      relative
+                      z-10
+
+                      flex-1
+                      w-full
+
+                      overflow-x-hidden
+
+                      pt-[72px]
+
+                      pb-[40px]
+                      md:pb-0
+                    "
+                  >
+                    <div
+                      className="
+                        relative
+                        mx-auto
+
+                        w-full
+                        max-w-[1920px]
+
+                        px-4
+                        sm:px-5
+                        md:px-6
+                        lg:px-8
+                        xl:px-10
+
+                        overflow-x-hidden
+                      "
+                    >
+                      <MobileGrid>
+                        <div
+                          className="
+                            min-w-0
+                            w-full
+                            break-words
+                          "
+                        >
+                          {children}
+                        </div>
+                      </MobileGrid>
+                    </div>
+                  </main>
+
+                  {/* FOOTER */}
+                  <Footer />
+                </div>
+
+              </ResponsiveLayout>
+            </MotionWrapper>
+
+            {/* MOBILE SAFE AREA */}
+            <div
+              className="
+                fixed
+                bottom-0
+                left-0
+
+                z-[5]
+
+                h-[env(safe-area-inset-bottom)]
+                w-full
+
+                bg-black
+              "
+            />
+
+          </TouchWrapper>
+        </MobileWrapper>
       </body>
     </html>
   );
