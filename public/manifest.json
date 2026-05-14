@@ -3,8 +3,10 @@
   "name": "NextGrid Style",
   "short_name": "NextGrid Style",
   "description": "Luxury futuristic fashion ecommerce platform powered by Next.js and Capacitor.",
+
   "start_url": "/",
   "scope": "/",
+
   "scope_extensions": [
     {
       "type": "origin",
@@ -13,37 +15,14 @@
   ],
 
   "display": "standalone",
-"display_override": [
-  "window-controls-overlay"
-],
 
-  "handle_links": "preferred",
-
-  "tab_strip": {
-    "home_tab": {
-      "scope_patterns": [
-        "/"
-      ]
-    },
-    "new_tab_button": {
-      "url": "/"
-    }
-  },
-
-  "widgets": [
-    {
-      "name": "NextGrid Style",
-      "short_name": "NextGrid",
-      "description": "Luxury futuristic fashion widget",
-      "tag": "fashion-widget",
-      "template": "wide",
-      "ms_ac_template": "wide",
-      "data": "/api/widget"
-    }
+  "display_override": [
+    "window-controls-overlay"
   ],
 
   "background_color": "#000000",
   "theme_color": "#000000",
+
   "orientation": "portrait-primary",
   "lang": "en-US",
   "dir": "ltr",
@@ -65,14 +44,6 @@
 
   "launch_handler": {
     "client_mode": "focus-existing"
-  },
-
-  "edge_side_panel": {
-    "preferred_width": 420
-  },
-
-  "note_taking": {
-    "new_note_url": "/"
   },
 
   "protocol_handlers": [
