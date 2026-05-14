@@ -1,302 +1,200 @@
 {
   "id": "/",
-
   "name": "NextGrid Style",
-
   "short_name": "NextGrid Style",
-
   "description": "Luxury futuristic fashion ecommerce platform powered by Next.js and Capacitor.",
-
   "start_url": "https://nextgridstyle.vercel.app/",
-
   "scope": "https://nextgridstyle.vercel.app/",
-
   "scope_extensions": [
     {
       "type": "origin",
       "origin": "https://nextgridstyle.vercel.app"
     }
   ],
-
   "display": "standalone",
-
   "display_override": [
     "window-controls-overlay"
   ],
-
   "background_color": "#000000",
-
   "theme_color": "#000000",
-
   "orientation": "portrait-primary",
-
   "lang": "en-US",
-
   "dir": "ltr",
-
   "categories": [
     "shopping",
     "fashion",
     "lifestyle"
   ],
-
   "prefer_related_applications": false,
-
   "related_applications": [
     {
       "platform": "webapp",
       "url": "https://nextgridstyle.vercel.app/manifest.json"
     }
   ],
-
   "launch_handler": {
     "client_mode": "focus-existing"
   },
-
   "edge_side_panel": {
     "preferred_width": 420
   },
-
   "note_taking": {
     "new_note_url": "/"
   },
-
   "protocol_handlers": [
     {
       "protocol": "web+nextgrid",
       "url": "/?url=%s"
     }
   ],
-
   "file_handlers": [
     {
       "action": "/",
-
       "accept": {
         "image/png": [
           ".png"
         ],
-
         "image/jpeg": [
           ".jpg",
           ".jpeg"
         ],
-
         "image/webp": [
           ".webp"
         ]
       }
     }
   ],
-
   "share_target": {
     "action": "/share",
-
     "method": "GET",
-
     "enctype": "application/x-www-form-urlencoded",
-
     "params": {
       "title": "title",
       "text": "text",
       "url": "url"
     }
   },
-
   "iarc_rating_id": "e",
-
   "widgets": [
     {
       "name": "NextGrid Style",
-
       "short_name": "NextGrid Style",
-
       "description": "Luxury fashion widget"
     }
   ],
-
   "screenshots": [
     {
       "src": "/screenshots/mobile-home.png",
-
       "sizes": "540x720",
-
       "type": "image/png",
-
       "form_factor": "narrow",
-
       "label": "NextGrid mobile homepage"
     },
-
     {
       "src": "/screenshots/desktop-home.png",
-
       "sizes": "1280x720",
-
       "type": "image/png",
-
       "form_factor": "wide",
-
       "label": "NextGrid desktop homepage"
     }
   ],
-
   "icons": [
     {
       "src": "/icons/icon-48.webp",
-
       "type": "image/webp",
-
       "sizes": "48x48",
-
       "purpose": "any"
     },
-
     {
       "src": "/icons/icon-72.webp",
-
       "type": "image/webp",
-
       "sizes": "72x72",
-
       "purpose": "any"
     },
-
     {
       "src": "/icons/icon-96.webp",
-
       "type": "image/webp",
-
       "sizes": "96x96",
-
       "purpose": "any"
     },
-
     {
       "src": "/icons/icon-128.webp",
-
       "type": "image/webp",
-
       "sizes": "128x128",
-
       "purpose": "any"
     },
-
     {
       "src": "/icons/icon-192.webp",
-
       "type": "image/webp",
-
       "sizes": "192x192",
-
       "purpose": "any"
     },
-
     {
       "src": "/icons/icon-256.webp",
-
       "type": "image/webp",
-
       "sizes": "256x256",
-
       "purpose": "any"
     },
-
     {
       "src": "/icons/icon-512.webp",
-
       "type": "image/webp",
-
       "sizes": "512x512",
-
       "purpose": "any"
     },
-
     {
       "src": "/icons/maskable-icon-192.png",
-
       "type": "image/png",
-
       "sizes": "192x192",
-
       "purpose": "maskable"
     },
-
     {
       "src": "/icons/maskable-icon-512.png",
-
       "type": "image/png",
-
       "sizes": "512x512",
-
       "purpose": "maskable"
     },
-
     {
       "src": "/icons/apple-touch-icon.png",
-
       "type": "image/png",
-
       "sizes": "180x180"
     }
   ],
-
   "shortcuts": [
     {
       "name": "Luxury Collection",
-
       "short_name": "Luxury",
-
       "description": "Explore luxury fashion collection",
-
       "url": "/luxury",
-
       "icons": [
         {
           "src": "/icons/icon-192.webp",
-
           "sizes": "192x192",
-
           "type": "image/webp"
         }
       ]
     },
-
     {
       "name": "Wishlist",
-
       "short_name": "Wishlist",
-
       "description": "View your wishlist",
-
       "url": "/wishlist",
-
       "icons": [
         {
           "src": "/icons/icon-192.webp",
-
           "sizes": "192x192",
-
           "type": "image/webp"
         }
       ]
     },
-
     {
       "name": "Search Fashion",
-
       "short_name": "Search",
-
       "description": "Search latest fashion products",
-
       "url": "/search",
-
       "icons": [
         {
           "src": "/icons/icon-192.webp",
-
           "sizes": "192x192",
-
           "type": "image/webp"
         }
       ]
