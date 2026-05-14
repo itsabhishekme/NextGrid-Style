@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   output: "export",
 
@@ -18,5 +19,21 @@ const nextConfig = {
     scrollRestoration: true,
   },
 };
+
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+});
+
+module.exports = withPWA({
+  output: "export",
+
+  images: {
+    unoptimized: true,
+  },
+
+  reactStrictMode: true,
+});
 
 module.exports = nextConfig;
