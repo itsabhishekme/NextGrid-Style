@@ -75,11 +75,26 @@
     }
   },
   "iarc_rating_id": "e",
+  "handle_links": "preferred",
+  "tab_strip": {
+    "home_tab": {
+      "scope_patterns": [
+        "/"
+      ]
+    },
+    "new_tab_button": {
+      "url": "/"
+    }
+  },
   "widgets": [
     {
       "name": "NextGrid Style",
-      "short_name": "NextGrid Style",
-      "description": "Luxury fashion widget"
+      "short_name": "NextGrid",
+      "description": "Luxury futuristic fashion widget",
+      "tag": "fashion-widget",
+      "template": "wide",
+      "ms_ac_template": "wide",
+      "data": "/api/widget"
     }
   ],
   "screenshots": [
