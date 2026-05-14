@@ -57,6 +57,10 @@ export default function DeviceDetector() {
     });
 
   useEffect(() => {
+    /* =========================================
+       DETECT DEVICE
+    ========================================= */
+
     const detectDevice = () => {
       const width =
         window.innerWidth;
@@ -68,9 +72,14 @@ export default function DeviceDetector() {
         navigator.userAgent;
 
       const isTouch =
-        "ontouchstart" in window ||
-        navigator.maxTouchPoints >
-          0;
+        typeof window !==
+          "undefined" &&
+        (
+          "ontouchstart" in
+            window ||
+          navigator.maxTouchPoints >
+            0
+        );
 
       const isIOS =
         /iPad|iPhone|iPod/.test(
@@ -106,9 +115,9 @@ export default function DeviceDetector() {
         type = "tablet";
       }
 
-      /* =========================================
-         UPDATE HTML CLASSES
-      ========================================= */
+      /* =====================================
+         ROOT CLASSES
+      ===================================== */
 
       document.documentElement.classList.remove(
         "mobile",
@@ -147,9 +156,9 @@ export default function DeviceDetector() {
         );
       }
 
-      /* =========================================
+      /* =====================================
          BODY ATTRIBUTES
-      ========================================= */
+      ===================================== */
 
       document.body.setAttribute(
         "data-device",
@@ -161,9 +170,9 @@ export default function DeviceDetector() {
         orientation
       );
 
-      /* =========================================
+      /* =====================================
          CSS VARIABLES
-      ========================================= */
+      ===================================== */
 
       document.documentElement.style.setProperty(
         "--window-width",
@@ -180,9 +189,56 @@ export default function DeviceDetector() {
         `${height * 0.01}px`
       );
 
-      /* =========================================
+      document.documentElement.style.setProperty(
+        "--vw",
+        `${width * 0.01}px`
+      );
+
+      /* =====================================
+         BODY FIX
+      ===================================== */
+
+      document.body.style.overflowX =
+        "hidden";
+
+      document.body.style.overflowY =
+        "auto";
+
+      document.body.style.minHeight =
+        "100vh";
+
+      document.body.style.height =
+        "auto";
+
+      document.body.style.position =
+        "relative";
+
+      document.body.style.setProperty(
+        "-webkit-overflow-scrolling",
+        "touch"
+      );
+
+      /* =====================================
+         TOUCH FIX
+      ===================================== */
+
+      if (isTouch) {
+        document.body.style.touchAction =
+          "pan-y";
+
+        document.body.style.overscrollBehaviorY =
+          "contain";
+      } else {
+        document.body.style.touchAction =
+          "auto";
+
+        document.body.style.overscrollBehavior =
+          "auto";
+      }
+
+      /* =====================================
          UPDATE STATE
-      ========================================= */
+      ===================================== */
 
       setDevice({
         type,
@@ -237,67 +293,10 @@ export default function DeviceDetector() {
       id="device-detector"
       className="
         hidden
+        invisible
         pointer-events-none
       "
       aria-hidden="true"
-    >
-      <span
-        data-device-type={
-          device.type
-        }
-      />
-
-      <span
-        data-mobile={
-          device.isMobile
-        }
-      />
-
-      <span
-        data-tablet={
-          device.isTablet
-        }
-      />
-
-      <span
-        data-desktop={
-          device.isDesktop
-        }
-      />
-
-      <span
-        data-ios={device.isIOS}
-      />
-
-      <span
-        data-android={
-          device.isAndroid
-        }
-      />
-
-      <span
-        data-touch={
-          device.isTouch
-        }
-      />
-
-      <span
-        data-width={
-          device.width
-        }
-      />
-
-      <span
-        data-height={
-          device.height
-        }
-      />
-
-      <span
-        data-orientation={
-          device.orientation
-        }
-      />
-    </div>
+    />
   );
 }
