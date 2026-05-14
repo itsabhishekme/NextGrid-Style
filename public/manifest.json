@@ -1,10 +1,10 @@
 {
-  "id": "/",
+  "id": "com.nextgridstyle.app",
   "name": "NextGrid Style",
   "short_name": "NextGrid Style",
   "description": "Luxury futuristic fashion ecommerce platform powered by Next.js and Capacitor.",
-  "start_url": "https://nextgridstyle.vercel.app/",
-  "scope": "https://nextgridstyle.vercel.app/",
+  "start_url": "/",
+  "scope": "/",
   "scope_extensions": [
     {
       "type": "origin",
@@ -156,7 +156,8 @@
     {
       "src": "/icons/apple-touch-icon.png",
       "type": "image/png",
-      "sizes": "180x180"
+      "sizes": "180x180",
+      "purpose": "any"
     }
   ],
   "shortcuts": [
