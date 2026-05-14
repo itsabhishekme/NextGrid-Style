@@ -1,55 +1,85 @@
 "use client";
 
 import {
-    useEffect,
+  useEffect,
 } from "react";
 
 export default function ScrollFix() {
-    useEffect(() => {
-        const preventOverscroll = (
-            e: TouchEvent
-        ) => {
-            const target =
-                e.target as HTMLElement;
+  useEffect(() => {
 
-            const scrollableParent =
-                target.closest(
-                    ".touch-scroll"
-                ) as HTMLElement | null;
+    /* HTML */
+    document.documentElement.style.overflowX =
+      "hidden";
 
-            if (!scrollableParent) {
-                e.preventDefault();
-            }
-        };
+    document.documentElement.style.overflowY =
+      "auto";
 
-        document.addEventListener(
-            "touchmove",
-            preventOverscroll,
-            {
-                passive: false,
-            }
-        );
+    /* BODY */
+    document.body.style.overflowX =
+      "hidden";
 
-        document.body.style.overscrollBehavior =
-            "none";
+    document.body.style.overflowY =
+      "auto";
 
-        document.body.style.overflowX =
-            "hidden";
+    document.body.style.touchAction =
+      "pan-y";
 
-        return () => {
-            document.removeEventListener(
-                "touchmove",
-                preventOverscroll
-            );
+    document.body.style.overscrollBehaviorY =
+      "auto";
 
-            document.body.style.overscrollBehavior =
-                "";
+    /* FIX IOS SCROLL */
+    (
+      document.body.style as CSSStyleDeclaration & {
+        webkitOverflowScrolling: string;
+      }
+    ).webkitOverflowScrolling =
+      "touch";
 
-            document.body.style.overflowX =
-                "";
+    const allowTouchScroll = () => {
+      return true;
+    };
 
-        };
-    }, []);
+    document.addEventListener(
+      "touchmove",
+      allowTouchScroll,
+      {
+        passive: true,
+      }
+    );
 
-    return null;
+    return () => {
+
+      document.documentElement.style.overflowX =
+        "";
+
+      document.documentElement.style.overflowY =
+        "";
+
+      document.body.style.overflowX =
+        "";
+
+      document.body.style.overflowY =
+        "";
+
+      document.body.style.touchAction =
+        "";
+
+      document.body.style.overscrollBehaviorY =
+        "";
+
+      (
+        document.body.style as CSSStyleDeclaration & {
+          webkitOverflowScrolling: string;
+        }
+      ).webkitOverflowScrolling =
+        "";
+
+      document.removeEventListener(
+        "touchmove",
+        allowTouchScroll
+      );
+    };
+  }, []);
+
+  return null;
 }

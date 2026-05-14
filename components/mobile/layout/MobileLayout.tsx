@@ -14,22 +14,53 @@ export default function MobileLayout({
   return (
     <div
       className={`
+        mobile-layout
+
         relative
         flex
-        min-h-screen
+
+        min-h-dvh
         w-full
+        max-w-full
+        min-w-0
+
         flex-col
 
         overflow-x-hidden
 
         bg-transparent
 
-        mobile-layout
+        touch-pan-y
 
         ${className}
       `}
+      style={{
+        WebkitOverflowScrolling:
+          "touch",
+
+        overscrollBehaviorX:
+          "none",
+
+        touchAction: "pan-y",
+      }}
     >
-      {children}
+      <div
+        className="
+          relative
+
+          flex
+          flex-1
+          flex-col
+
+          w-full
+          max-w-full
+          min-w-0
+
+          overflow-x-hidden
+        "
+      >
+        {children}
+      </div>
     </div>
   );
 }

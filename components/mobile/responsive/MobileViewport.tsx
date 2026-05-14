@@ -20,8 +20,10 @@ export default function MobileViewport({
   ] = useState(0);
 
   useEffect(() => {
+
     const updateViewport =
       () => {
+
         const vh =
           window.innerHeight *
           0.01;
@@ -49,6 +51,7 @@ export default function MobileViewport({
     );
 
     return () => {
+
       window.removeEventListener(
         "resize",
         updateViewport
@@ -64,25 +67,51 @@ export default function MobileViewport({
   return (
     <div
       className={`
+        mobile-viewport
+
         relative
+
         w-full
-        min-h-screen
+        max-w-full
+        min-w-0
+
+        min-h-dvh
 
         overflow-x-hidden
 
-        mobile-viewport
+        touch-pan-y
 
         ${className}
       `}
       style={{
         minHeight:
           "calc(var(--vh, 1vh) * 100)",
+
+        WebkitOverflowScrolling:
+          "touch",
+
+        overscrollBehaviorX:
+          "none",
+
+        touchAction: "pan-y",
       }}
       data-viewport-height={
         viewportHeight
       }
     >
-      {children}
+      <div
+        className="
+          relative
+
+          w-full
+          max-w-full
+          min-w-0
+
+          overflow-x-hidden
+        "
+      >
+        {children}
+      </div>
     </div>
   );
 }

@@ -17,6 +17,7 @@ export default function MobileContainer({
         mobile-container
 
         relative
+
         w-full
         max-w-full
         min-w-0
@@ -30,10 +31,31 @@ export default function MobileContainer({
 
         overflow-x-hidden
 
+        touch-pan-y
+
         ${className}
       `}
+      style={{
+        WebkitOverflowScrolling:
+          "touch",
+
+        overscrollBehaviorX:
+          "none",
+      }}
     >
-      {children}
+      <div
+        className="
+          relative
+
+          w-full
+          max-w-full
+          min-w-0
+
+          overflow-x-hidden
+        "
+      >
+        {children}
+      </div>
     </div>
   );
 }

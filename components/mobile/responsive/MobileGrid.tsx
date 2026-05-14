@@ -17,11 +17,13 @@ export default function MobileGrid({
         mobile-grid
 
         relative
-        w-full
-        min-w-0
 
         grid
         grid-cols-1
+
+        w-full
+        max-w-full
+        min-w-0
 
         gap-4
         sm:gap-5
@@ -29,10 +31,33 @@ export default function MobileGrid({
 
         overflow-x-hidden
 
+        touch-pan-y
+
         ${className}
       `}
+      style={{
+        WebkitOverflowScrolling:
+          "touch",
+
+        overscrollBehaviorX:
+          "none",
+
+        touchAction: "pan-y",
+      }}
     >
-      {children}
+      <div
+        className="
+          relative
+
+          w-full
+          max-w-full
+          min-w-0
+
+          overflow-x-hidden
+        "
+      >
+        {children}
+      </div>
     </div>
   );
 }

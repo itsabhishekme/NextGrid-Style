@@ -280,3 +280,47 @@ body::-webkit-scrollbar {
 
   -ms-overflow-style: none !important;
 }
+
+/* =========================================
+   MOBILE SCROLL FIX
+========================================= */
+
+html,
+body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  -webkit-overflow-scrolling: touch;
+
+  touch-action: pan-y;
+
+  overscroll-behavior-y: auto;
+}
+
+/* SMOOTH MOBILE SCROLL */
+body {
+  position: relative;
+
+  min-height: 100dvh;
+}
+
+/* KEEP SCROLL WORKING */
+main {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* HIDE SCROLLBAR VISUALLY ONLY */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  scrollbar-width: none;
+}
