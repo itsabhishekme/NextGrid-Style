@@ -2,19 +2,7 @@
 
 import Link from "next/link";
 
-import {
-  Menu,
-  Search,
-  ShoppingBag,
-} from "lucide-react";
-
-type MobileTopBarProps = {
-  onMenuClick?: () => void;
-};
-
-export default function MobileTopBar({
-  onMenuClick,
-}: MobileTopBarProps) {
+export default function MobileTopBar() {
   return (
     <header
       className="
@@ -24,10 +12,10 @@ export default function MobileTopBar({
         z-[300]
 
         flex
-        h-[64px]
+        h-[68px]
         w-full
         items-center
-        justify-between
+        justify-center
 
         border-b
         border-white/10
@@ -40,139 +28,46 @@ export default function MobileTopBar({
         md:hidden
       "
     >
-      {/* LEFT */}
-      <div
+      <Link
+        href="/"
         className="
           flex
+          flex-col
           items-center
-          gap-3
+          justify-center
+
+          leading-none
+          text-center
         "
       >
-        <button
-          type="button"
-          onClick={onMenuClick}
-          aria-label="Open Menu"
+        <span
           className="
-            flex
-            h-11
-            w-11
-            items-center
-            justify-center
+            text-[16px]
+            font-black
 
-            rounded-full
+            tracking-[0.35em]
 
-            border
-            border-white/10
-
-            bg-white/5
-
-            transition-all
-            duration-300
-
-            active:scale-95
-          "
-        >
-          <Menu
-            size={20}
-            className="text-white"
-          />
-        </button>
-
-        <Link
-          href="/"
-          className="
-            text-sm
-            font-semibold
-            tracking-[0.2em]
             text-white
           "
         >
           NEXTGRID
-        </Link>
-      </div>
+        </span>
 
-      {/* RIGHT */}
-      <div
-        className="
-          flex
-          items-center
-          gap-2
-        "
-      >
-        <button
-          type="button"
-          aria-label="Search"
+        <span
           className="
-            flex
-            h-11
-            w-11
-            items-center
-            justify-center
+            mt-[3px]
 
-            rounded-full
+            text-[9px]
+            font-medium
 
-            border
-            border-white/10
+            tracking-[0.45em]
 
-            bg-white/5
-
-            transition-all
-            duration-300
-
-            active:scale-95
+            text-white/45
           "
         >
-          <Search
-            size={18}
-            className="text-white"
-          />
-        </button>
-
-        <button
-          type="button"
-          aria-label="Cart"
-          className="
-            relative
-
-            flex
-            h-11
-            w-11
-            items-center
-            justify-center
-
-            rounded-full
-
-            border
-            border-white/10
-
-            bg-white/5
-
-            transition-all
-            duration-300
-
-            active:scale-95
-          "
-        >
-          <ShoppingBag
-            size={18}
-            className="text-white"
-          />
-
-          <span
-            className="
-              absolute
-              right-2
-              top-2
-
-              h-2
-              w-2
-
-              rounded-full
-              bg-white
-            "
-          />
-        </button>
-      </div>
+          STYLE STUDIO
+        </span>
+      </Link>
     </header>
   );
 }
