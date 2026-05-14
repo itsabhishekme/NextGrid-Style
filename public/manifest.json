@@ -94,8 +94,7 @@
 
     "method": "GET",
 
-    "enctype":
-      "application/x-www-form-urlencoded",
+    "enctype": "application/x-www-form-urlencoded",
 
     "params": {
       "title": "title",
@@ -108,256 +107,187 @@
 
   "widgets": [
     {
-      "name":
-        "NextGrid",
+      "name": "NextGrid Style",
 
-      "short_name":
-        "NextGrid",
+      "short_name": "NextGrid Style",
 
-      "description":
-        "Luxury fashion widget"
+      "description": "Luxury fashion widget"
     }
   ],
 
   "screenshots": [
     {
-      "src":
-        "/screenshots/mobile-home.png",
+      "src": "/screenshots/mobile-home.png",
 
-      "sizes":
-        "540x720",
+      "sizes": "540x720",
 
-      "type":
-        "image/png",
+      "type": "image/png",
 
-      "form_factor":
-        "narrow",
+      "form_factor": "narrow",
 
-      "label":
-        "NextGrid mobile homepage"
+      "label": "NextGrid mobile homepage"
     },
 
     {
-      "src":
-        "/screenshots/desktop-home.png",
+      "src": "/screenshots/desktop-home.png",
 
-      "sizes":
-        "1280x720",
+      "sizes": "1280x720",
 
-      "type":
-        "image/png",
+      "type": "image/png",
 
-      "form_factor":
-        "wide",
+      "form_factor": "wide",
 
-      "label":
-        "NextGrid desktop homepage"
+      "label": "NextGrid desktop homepage"
     }
   ],
 
   "icons": [
     {
-      "src":
-        "/icons/icon-48.webp",
+      "src": "/icons/icon-48.webp",
 
-      "type":
-        "image/webp",
+      "type": "image/webp",
 
-      "sizes":
-        "48x48",
+      "sizes": "48x48",
 
-      "purpose":
-        "any maskable"
+      "purpose": "any maskable"
     },
 
     {
-      "src":
-        "/icons/icon-72.webp",
+      "src": "/icons/icon-72.webp",
 
-      "type":
-        "image/webp",
+      "type": "image/webp",
 
-      "sizes":
-        "72x72",
+      "sizes": "72x72",
 
-      "purpose":
-        "any maskable"
+      "purpose": "any maskable"
     },
 
     {
-      "src":
-        "/icons/icon-96.webp",
+      "src": "/icons/icon-96.webp",
 
-      "type":
-        "image/webp",
+      "type": "image/webp",
 
-      "sizes":
-        "96x96",
+      "sizes": "96x96",
 
-      "purpose":
-        "any maskable"
+      "purpose": "any maskable"
     },
 
     {
-      "src":
-        "/icons/icon-128.webp",
+      "src": "/icons/icon-128.webp",
 
-      "type":
-        "image/webp",
+      "type": "image/webp",
 
-      "sizes":
-        "128x128",
+      "sizes": "128x128",
 
-      "purpose":
-        "any maskable"
+      "purpose": "any maskable"
     },
 
     {
-      "src":
-        "/icons/icon-192.webp",
+      "src": "/icons/icon-192.webp",
 
-      "type":
-        "image/webp",
+      "type": "image/webp",
 
-      "sizes":
-        "192x192",
+      "sizes": "192x192",
 
-      "purpose":
-        "any maskable"
+      "purpose": "any maskable"
     },
 
     {
-      "src":
-        "/icons/icon-256.webp",
+      "src": "/icons/icon-256.webp",
 
-      "type":
-        "image/webp",
+      "type": "image/webp",
 
-      "sizes":
-        "256x256",
+      "sizes": "256x256",
 
-      "purpose":
-        "any maskable"
+      "purpose": "any maskable"
     },
 
     {
-      "src":
-        "/icons/icon-512.webp",
+      "src": "/icons/icon-512.webp",
 
-      "type":
-        "image/webp",
+      "type": "image/webp",
 
-      "sizes":
-        "512x512",
+      "sizes": "512x512",
 
-      "purpose":
-        "any maskable"
+      "purpose": "any maskable"
     },
 
     {
-      "src":
-        "/icons/apple-touch-icon.png",
+      "src": "/icons/apple-touch-icon.png",
 
-      "type":
-        "image/png",
+      "type": "image/png",
 
-      "sizes":
-        "180x180"
+      "sizes": "180x180"
     },
 
     {
-      "src":
-        "/icons/maskable-icon.png",
+      "src": "/icons/maskable-icon.png",
 
-      "type":
-        "image/png",
+      "type": "image/png",
 
-      "sizes":
-        "512x512",
+      "sizes": "512x512",
 
-      "purpose":
-        "maskable"
+      "purpose": "maskable"
     }
   ],
 
   "shortcuts": [
     {
-      "name":
-        "Luxury Collection",
+      "name": "Luxury Collection",
 
-      "short_name":
-        "Luxury",
+      "short_name": "Luxury",
 
-      "description":
-        "Explore luxury fashion collection",
+      "description": "Explore luxury fashion collection",
 
-      "url":
-        "/luxury",
+      "url": "/luxury",
 
       "icons": [
         {
-          "src":
-            "/icons/icon-192.webp",
+          "src": "/icons/icon-192.webp",
 
-          "sizes":
-            "192x192",
+          "sizes": "192x192",
 
-          "type":
-            "image/webp"
+          "type": "image/webp"
         }
       ]
     },
 
     {
-      "name":
-        "Wishlist",
+      "name": "Wishlist",
 
-      "short_name":
-        "Wishlist",
+      "short_name": "Wishlist",
 
-      "description":
-        "View your wishlist",
+      "description": "View your wishlist",
 
-      "url":
-        "/wishlist",
+      "url": "/wishlist",
 
       "icons": [
         {
-          "src":
-            "/icons/icon-192.webp",
+          "src": "/icons/icon-192.webp",
 
-          "sizes":
-            "192x192",
+          "sizes": "192x192",
 
-          "type":
-            "image/webp"
+          "type": "image/webp"
         }
       ]
     },
 
     {
-      "name":
-        "Search Fashion",
+      "name": "Search Fashion",
 
-      "short_name":
-        "Search",
+      "short_name": "Search",
 
-      "description":
-        "Search latest fashion products",
+      "description": "Search latest fashion products",
 
-      "url":
-        "/search",
+      "url": "/search",
 
       "icons": [
         {
-          "src":
-            "/icons/icon-192.webp",
+          "src": "/icons/icon-192.webp",
 
-          "sizes":
-            "192x192",
+          "sizes": "192x192",
 
-          "type":
-            "image/webp"
+          "type": "image/webp"
         }
       ]
     }
