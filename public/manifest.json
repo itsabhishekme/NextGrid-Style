@@ -1,122 +1,293 @@
 {
+  "id": "/",
+
   "name": "NextGrid Style Fashion",
+
   "short_name": "NextGrid",
+
   "description": "Luxury futuristic fashion ecommerce platform powered by Next.js and Capacitor.",
+
   "start_url": "/",
+
   "scope": "/",
+
+  "scope_extensions": [
+    {
+      "origin": "https://nextgrid-style-fashion.vercel.app"
+    }
+  ],
+
   "display": "standalone",
+
   "display_override": [
     "window-controls-overlay",
     "standalone",
     "minimal-ui"
   ],
+
   "background_color": "#000000",
+
   "theme_color": "#000000",
+
   "orientation": "portrait-primary",
+
   "lang": "en-US",
+
   "dir": "ltr",
+
   "categories": [
     "shopping",
     "fashion",
     "lifestyle"
   ],
+
   "prefer_related_applications": false,
+
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+
+  "edge_side_panel": {
+    "preferred_width": 420
+  },
+
+  "note_taking": {
+    "new_note_url": "/"
+  },
+
+  "protocol_handlers": [
+    {
+      "protocol": "web+nextgrid",
+      "url": "/?url=%s"
+    }
+  ],
+
+  "file_handlers": [
+    {
+      "action": "/",
+
+      "accept": {
+        "image/png": [".png"],
+        "image/jpeg": [
+          ".jpg",
+          ".jpeg"
+        ],
+        "image/webp": [
+          ".webp"
+        ]
+      }
+    }
+  ],
+
+  "share_target": {
+    "action": "/share",
+
+    "method": "GET",
+
+    "enctype":
+      "application/x-www-form-urlencoded",
+
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+
+  "related_applications": [],
+
+  "iarc_rating_id": "e",
+
+  "widgets": [],
+
   "screenshots": [
     {
-      "src": "/screenshots/mobile-home.png",
+      "src":
+        "/screenshots/mobile-home.png",
+
       "sizes": "540x720",
+
       "type": "image/png",
+
       "form_factor": "narrow",
-      "label": "NextGrid mobile homepage"
+
+      "label":
+        "NextGrid mobile homepage"
     },
+
     {
-      "src": "/screenshots/desktop-home.png",
+      "src":
+        "/screenshots/desktop-home.png",
+
       "sizes": "1280x720",
+
       "type": "image/png",
+
       "form_factor": "wide",
-      "label": "NextGrid desktop homepage"
+
+      "label":
+        "NextGrid desktop homepage"
     }
   ],
+
   "icons": [
     {
-      "src": "../icons/icon-48.webp",
-      "type": "image/png",
+      "src": "/icons/icon-48.webp",
+
+      "type": "image/webp",
+
       "sizes": "48x48",
+
       "purpose": "any maskable"
     },
+
     {
-      "src": "../icons/icon-72.webp",
-      "type": "image/png",
+      "src": "/icons/icon-72.webp",
+
+      "type": "image/webp",
+
       "sizes": "72x72",
+
       "purpose": "any maskable"
     },
+
     {
-      "src": "../icons/icon-96.webp",
-      "type": "image/png",
+      "src": "/icons/icon-96.webp",
+
+      "type": "image/webp",
+
       "sizes": "96x96",
+
       "purpose": "any maskable"
     },
+
     {
-      "src": "../icons/icon-128.webp",
-      "type": "image/png",
+      "src": "/icons/icon-128.webp",
+
+      "type": "image/webp",
+
       "sizes": "128x128",
+
       "purpose": "any maskable"
     },
+
     {
-      "src": "../icons/icon-192.webp",
-      "type": "image/png",
+      "src": "/icons/icon-192.webp",
+
+      "type": "image/webp",
+
       "sizes": "192x192",
+
       "purpose": "any maskable"
     },
+
     {
-      "src": "../icons/icon-256.webp",
-      "type": "image/png",
+      "src": "/icons/icon-256.webp",
+
+      "type": "image/webp",
+
       "sizes": "256x256",
+
       "purpose": "any maskable"
     },
+
     {
-      "src": "../icons/icon-512.webp",
-      "type": "image/png",
+      "src": "/icons/icon-512.webp",
+
+      "type": "image/webp",
+
       "sizes": "512x512",
+
       "purpose": "any maskable"
+    },
+
+    {
+      "src":
+        "/icons/apple-touch-icon.png",
+
+      "type": "image/png",
+
+      "sizes": "180x180"
+    },
+
+    {
+      "src":
+        "/icons/maskable-icon.png",
+
+      "type": "image/png",
+
+      "sizes": "512x512",
+
+      "purpose": "maskable"
     }
   ],
+
   "shortcuts": [
     {
-      "name": "Luxury Collection",
+      "name":
+        "Luxury Collection",
+
       "short_name": "Luxury",
-      "description": "Explore luxury fashion collection",
+
+      "description":
+        "Explore luxury fashion collection",
+
       "url": "/luxury",
+
       "icons": [
         {
-          "src": "/icons/icon-192.webp",
+          "src":
+            "/icons/icon-192.webp",
+
           "sizes": "192x192",
+
           "type": "image/webp"
         }
       ]
     },
+
     {
       "name": "Wishlist",
-      "short_name": "Wishlist",
-      "description": "View your wishlist",
+
+      "short_name":
+        "Wishlist",
+
+      "description":
+        "View your wishlist",
+
       "url": "/wishlist",
+
       "icons": [
         {
-          "src": "/icons/icon-192.webp",
+          "src":
+            "/icons/icon-192.webp",
+
           "sizes": "192x192",
+
           "type": "image/webp"
         }
       ]
     },
+
     {
-      "name": "Search Fashion",
-      "short_name": "Search",
-      "description": "Search latest fashion products",
+      "name":
+        "Search Fashion",
+
+      "short_name":
+        "Search",
+
+      "description":
+        "Search latest fashion products",
+
       "url": "/search",
+
       "icons": [
         {
-          "src": "/icons/icon-192.webp",
+          "src":
+            "/icons/icon-192.webp",
+
           "sizes": "192x192",
+
           "type": "image/webp"
         }
       ]
