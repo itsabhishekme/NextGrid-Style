@@ -149,7 +149,7 @@
 
       "sizes": "48x48",
 
-      "purpose": "any maskable"
+      "purpose": "any"
     },
 
     {
@@ -159,7 +159,7 @@
 
       "sizes": "72x72",
 
-      "purpose": "any maskable"
+      "purpose": "any"
     },
 
     {
@@ -169,7 +169,7 @@
 
       "sizes": "96x96",
 
-      "purpose": "any maskable"
+      "purpose": "any"
     },
 
     {
@@ -179,7 +179,7 @@
 
       "sizes": "128x128",
 
-      "purpose": "any maskable"
+      "purpose": "any"
     },
 
     {
@@ -189,7 +189,7 @@
 
       "sizes": "192x192",
 
-      "purpose": "any maskable"
+      "purpose": "any"
     },
 
     {
@@ -199,7 +199,7 @@
 
       "sizes": "256x256",
 
-      "purpose": "any maskable"
+      "purpose": "any"
     },
 
     {
@@ -209,7 +209,27 @@
 
       "sizes": "512x512",
 
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+
+    {
+      "src": "/icons/maskable-icon-192.png",
+
+      "type": "image/png",
+
+      "sizes": "192x192",
+
+      "purpose": "maskable"
+    },
+
+    {
+      "src": "/icons/maskable-icon-512.png",
+
+      "type": "image/png",
+
+      "sizes": "512x512",
+
+      "purpose": "maskable"
     },
 
     {
@@ -218,16 +238,6 @@
       "type": "image/png",
 
       "sizes": "180x180"
-    },
-
-    {
-      "src": "/icons/maskable-icon.png",
-
-      "type": "image/png",
-
-      "sizes": "512x512",
-
-      "purpose": "maskable"
     }
   ],
 
