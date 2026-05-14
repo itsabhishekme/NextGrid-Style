@@ -11,42 +11,77 @@
       "origin": "https://nextgridstyle.vercel.app"
     }
   ],
+
   "display": "standalone",
-  "display_override": [
-    "window-controls-overlay"
+"display_override": [
+  "window-controls-overlay"
+],
+
+  "handle_links": "preferred",
+
+  "tab_strip": {
+    "home_tab": {
+      "scope_patterns": [
+        "/"
+      ]
+    },
+    "new_tab_button": {
+      "url": "/"
+    }
+  },
+
+  "widgets": [
+    {
+      "name": "NextGrid Style",
+      "short_name": "NextGrid",
+      "description": "Luxury futuristic fashion widget",
+      "tag": "fashion-widget",
+      "template": "wide",
+      "ms_ac_template": "wide",
+      "data": "/api/widget"
+    }
   ],
+
   "background_color": "#000000",
   "theme_color": "#000000",
   "orientation": "portrait-primary",
   "lang": "en-US",
   "dir": "ltr",
+
   "categories": [
     "shopping",
     "fashion",
     "lifestyle"
   ],
+
   "prefer_related_applications": false,
+
   "related_applications": [
     {
       "platform": "webapp",
       "url": "https://nextgridstyle.vercel.app/manifest.json"
     }
   ],
+
   "launch_handler": {
     "client_mode": "focus-existing"
   },
+
   "edge_side_panel": {
     "preferred_width": 420
   },
+
   "note_taking": {
     "new_note_url": "/"
   },
+
   "protocol_handlers": [
     {
       "protocol": "web+nextgrid",
       "url": "/?url=%s"
     }
   ],
+
   "file_handlers": [
     {
       "action": "/",
@@ -64,6 +99,7 @@
       }
     }
   ],
+
   "share_target": {
     "action": "/share",
     "method": "GET",
@@ -74,29 +110,9 @@
       "url": "url"
     }
   },
+
   "iarc_rating_id": "e",
-  "handle_links": "preferred",
-  "tab_strip": {
-    "home_tab": {
-      "scope_patterns": [
-        "/"
-      ]
-    },
-    "new_tab_button": {
-      "url": "/"
-    }
-  },
-  "widgets": [
-    {
-      "name": "NextGrid Style",
-      "short_name": "NextGrid",
-      "description": "Luxury futuristic fashion widget",
-      "tag": "fashion-widget",
-      "template": "wide",
-      "ms_ac_template": "wide",
-      "data": "/api/widget"
-    }
-  ],
+
   "screenshots": [
     {
       "src": "/screenshots/mobile-home.png",
@@ -113,6 +129,7 @@
       "label": "NextGrid desktop homepage"
     }
   ],
+
   "icons": [
     {
       "src": "/icons/icon-48.webp",
@@ -175,6 +192,7 @@
       "purpose": "any"
     }
   ],
+
   "shortcuts": [
     {
       "name": "Luxury Collection",
