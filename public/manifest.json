@@ -1,0 +1,223 @@
+{
+  "name": "NextGrid Style",
+  "short_name": "NextGrid Style",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "description": "NextGrid Style is a modern web experience with PWA support, widgets, shortcuts, side panel integration, and advanced installable app capabilities.",
+  "lang": "en",
+  "dir": "auto",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "orientation": "any",
+
+  "categories": [
+    "productivity",
+    "developer",
+    "utilities"
+  ],
+
+  "icons": [
+    {
+      "src": "https://nextgridstyle.vercel.app/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://nextgridstyle.vercel.app/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://nextgridstyle.vercel.app/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://nextgridstyle.vercel.app/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://nextgridstyle.vercel.app/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://nextgridstyle.vercel.app/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://nextgridstyle.vercel.app/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "https://nextgridstyle.vercel.app/screenshots/home-desktop.png",
+      "sizes": "2880x1800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "NextGrid Style Desktop Home"
+    },
+    {
+      "src": "https://nextgridstyle.vercel.app/screenshots/home-mobile.png",
+      "sizes": "1242x2688",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "NextGrid Style Mobile Home"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Open the dashboard page",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "https://nextgridstyle.vercel.app/icons/dashboard.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View all projects",
+      "url": "/projects",
+      "icons": [
+        {
+          "src": "https://nextgridstyle.vercel.app/icons/projects.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "short_name": "Settings",
+      "description": "Manage your application settings",
+      "url": "/settings",
+      "icons": [
+        {
+          "src": "https://nextgridstyle.vercel.app/icons/settings.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+
+  "file_handlers": [
+    {
+      "action": "/open-file",
+      "accept": {
+        "text/plain": [".txt"],
+        "application/json": [".json"],
+        "image/png": [".png"],
+        "image/jpeg": [".jpg", ".jpeg"]
+      }
+    }
+  ],
+
+  "launch_handler": {
+    "client_mode": [
+      "focus-existing",
+      "auto"
+    ]
+  },
+
+  "protocol_handlers": [
+    {
+      "protocol": "web+nextgrid",
+      "url": "/protocol?url=%s"
+    }
+  ],
+
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": [
+            "image/*",
+            "text/plain",
+            ".pdf"
+          ]
+        }
+      ]
+    }
+  },
+
+  "widgets": [
+    {
+      "name": "NextGrid Widget",
+      "short_name": "NextGrid",
+      "description": "Quick access widget for NextGrid Style",
+      "tag": "nextgrid-widget",
+      "template": "/widgets/widget.html",
+      "ms_ac_template": "/widgets/widget.html",
+      "data": "/widgets/widget.json",
+      "screenshots": [
+        {
+          "src": "https://nextgridstyle.vercel.app/widgets/widget-preview.png",
+          "sizes": "1200x800"
+        }
+      ]
+    }
+  ],
+
+  "edge_side_panel": {
+    "preferred_width": 420
+  },
+
+  "window_controls_overlay": {
+    "enabled": true
+  },
+
+  "tab_strip": {
+    "new_tab_button": {
+      "url": "/new-tab"
+    },
+    "home_tab": {
+      "url": "/"
+    }
+  },
+
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://nextgridstyle.vercel.app"
+    },
+    {
+      "platform": "windows",
+      "url": "https://nextgridstyle.vercel.app"
+    }
+  ],
+
+  "prefer_related_applications": false
+}
