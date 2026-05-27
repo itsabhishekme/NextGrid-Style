@@ -401,8 +401,8 @@ export default function Footer() {
                   <Image
                     src="/favicon.ico"
                     alt="logo"
-                    width={54}
-                    height={54}
+                    width={110}
+                    height={110}
                   />
                 </div>
 
