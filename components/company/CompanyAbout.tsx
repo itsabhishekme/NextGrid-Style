@@ -131,7 +131,7 @@ const stats = [
 
 export default function CompanyAbout() {
   return (
-    <main className="bg-white text-gray-900">
+    <main className="bg-blue text-gray-900">
       {/* Hero */}
       <section className="border-b bg-gradient-to-br from-slate-950 via-slate-900 to-black py-24 text-white">
         <div className="mx-auto max-w-7xl px-6">
