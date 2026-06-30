@@ -228,7 +228,7 @@ export default function AboutPage() {
                     text-transparent
                   "
                 >
-                  NextGrid
+                  NextGrid Style
                 </span>
               </h1>
 
@@ -243,7 +243,7 @@ export default function AboutPage() {
                   sm:text-lg
                 "
               >
-                NextGrid is a premium futuristic
+                NextGrid Style is a premium futuristic
                 fashion company focused on luxury
                 ecommerce experiences, modern
                 design systems and immersive
@@ -370,7 +370,7 @@ export default function AboutPage() {
                     </p>
 
                     <h3 className="mt-2 text-3xl font-black">
-                      NextGrid
+                      NextGrid Style
                     </h3>
                   </div>
 
@@ -663,7 +663,7 @@ export default function AboutPage() {
                 tracking-[0.15em]
               "
             >
-              Why NextGrid
+              Why NextGrid Style
             </h2>
           </div>
 
@@ -772,7 +772,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-4xl text-center">
 
             <span className="rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
-              NextGrid Innovation
+              NextGrid Style Innovation
             </span>
 
             <h2 className="mt-8 text-5xl font-extrabold leading-tight md:text-6xl">
