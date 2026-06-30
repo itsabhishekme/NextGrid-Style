@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
+import CompanyAbout from "@/components/company/CompanyAbout";
+
 import {
   ArrowRight,
   Sparkles,
@@ -462,6 +464,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <CompanyAbout />
 
       {/* COMPANY SECTION */}
       <section className="relative px-6 pb-24">
