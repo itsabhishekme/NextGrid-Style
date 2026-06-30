@@ -342,7 +342,7 @@ export default function CompanyAbout() {
 
             <Link
               href="/brands"
-              className="mt-10 inline-flex items-center rounded-full bg-white px-8 py-4 text-lg font-semibold text-violet-700 transition hover:scale-105"
+              className="mt-10 inline-flex items-center rounded-full bg-blue px-8 py-4 text-lg font-semibold text-violet-700 transition hover:scale-105"
             >
               Explore All Brands →
             </Link>
