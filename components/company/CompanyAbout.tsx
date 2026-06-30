@@ -144,7 +144,7 @@ export default function CompanyAbout() {
           </h1>
 
           <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">
-            NextGrid is creating a unified ecosystem of premium fashion,
+            NextGrid Style is creating a unified ecosystem of fashion,
             lifestyle, beauty, footwear and modern retail experiences.
             Our mission is to combine innovation, quality and timeless
             design under one trusted brand.
@@ -178,7 +178,7 @@ export default function CompanyAbout() {
           </h2>
 
           <p className="mt-6 leading-8 text-gray-600">
-            NextGrid began with a simple idea—create a unified fashion
+            NextGrid Style began with a simple idea—create a unified fashion
             ecosystem where quality, innovation, sustainability and
             customer experience work together. Rather than building a
             single clothing label, we are developing multiple specialized
@@ -186,7 +186,7 @@ export default function CompanyAbout() {
           </p>
 
           <p className="mt-6 leading-8 text-gray-600">
-            From premium menswear and womenswear to footwear, beauty,
+            From menswear and womenswear to footwear, beauty,
             home living and wearable technology, each brand reflects
             craftsmanship, modern design and long-term value.
           </p>
@@ -235,7 +235,7 @@ export default function CompanyAbout() {
             </h2>
 
             <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-600">
-              NextGrid is building a growing ecosystem of digital-first brands,
+              NextGrid Style is building a growing ecosystem of digital-first brands,
               each designed to solve real-world problems while maintaining the
               same commitment to innovation, premium quality, customer
               satisfaction, and long-term scalability.
@@ -302,9 +302,6 @@ export default function CompanyAbout() {
 
                   {/* Features */}
                   <div className="mt-8 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-gray-700">
-                      Premium
-                    </span>
 
                     <span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-gray-700">
                       Innovation
@@ -392,12 +389,12 @@ export default function CompanyAbout() {
             <h2 className="mt-8 text-5xl font-extrabold leading-tight md:text-6xl">
               Join the
               <span className="block bg-gradient-to-r from-white via-violet-200 to-blue-200 bg-clip-text text-transparent">
-                NextGrid Ecosystem
+                NextGrid Style Ecosystem
               </span>
             </h2>
 
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-violet-100">
-              NextGrid is more than a collection of brands—it's a growing
+              NextGrid Style is more than a collection of brands—it's a growing
               ecosystem driven by innovation, creativity, technology, and a
               passion for delivering exceptional experiences. Whether you're
               shopping for premium fashion, discovering new digital products,
@@ -417,17 +414,13 @@ export default function CompanyAbout() {
               </h3>
 
               <p className="mt-4 leading-8 text-violet-100">
-                Every NextGrid brand is designed with modern technology,
-                premium user experience, and continuous innovation at its core.
+                Every NextGrid Style brand is designed with modern technology,
+                user experience, and continuous innovation at its core.
               </p>
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur-lg transition hover:bg-white/15">
               <div className="text-5xl">⭐</div>
-
-              <h3 className="mt-6 text-2xl font-bold">
-                Premium Quality
-              </h3>
 
               <p className="mt-4 leading-8 text-violet-100">
                 We carefully craft products and experiences that meet high
