@@ -481,7 +481,7 @@ export default function CompanyAbout() {
 
             <Link
               href="/nextgrid-style"
-              className="inline-flex items-center rounded-2xl bg-white px-10 py-5 text-lg font-bold text-violet-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="inline-flex items-center rounded-2xl bg-blue px-10 py-5 text-lg font-bold text-violet-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
               Explore Our Brands →
             </Link>
