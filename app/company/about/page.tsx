@@ -243,14 +243,14 @@ export default function AboutPage() {
                   sm:text-lg
                 "
               >
-                NextGrid Style is a premium futuristic
+                NextGrid Style is a futuristic
                 fashion company focused on luxury
                 ecommerce experiences, modern
                 design systems and immersive
                 shopping technology.
 
                 Built with modern web technologies,
-                NextGrid combines premium
+                NextGrid Style combines premium
                 aesthetics with responsive user
                 experience to create a next
                 generation fashion platform for
@@ -365,9 +365,6 @@ export default function AboutPage() {
                   "
                 >
                   <div>
-                    <p className="text-zinc-500">
-                      Premium Company
-                    </p>
 
                     <h3 className="mt-2 text-3xl font-black">
                       NextGrid Style
@@ -756,6 +753,7 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
       {/* NextGrid Nexus */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950 py-28 text-white">
 
