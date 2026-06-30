@@ -371,24 +371,148 @@ export default function CompanyAbout() {
       </section>
 
       {/* CTA */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-5xl font-bold">
-            Join the NextGrid Journey
-          </h2>
+      <section className="relative overflow-hidden border-t bg-gradient-to-br from-violet-700 via-indigo-700 to-slate-900 py-28 text-white">
 
-          <p className="mt-6 text-lg text-gray-600">
-            Explore our growing collection of premium brands and discover
-            how innovation, creativity and quality come together to shape
-            the future of fashion.
-          </p>
+        {/* Background Decorations */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute -left-20 top-20 h-80 w-80 rounded-full bg-violet-500/20 blur-3xl" />
+          <div className="absolute -right-20 bottom-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
+        </div>
 
-          <Link
-            href="/nextgrid-style"
-            className="mt-10 inline-flex rounded-xl bg-violet-600 px-8 py-4 text-lg font-semibold text-white transition hover:bg-violet-700"
-          >
-            Explore Brands
-          </Link>
+        <div className="mx-auto max-w-7xl px-6">
+
+          {/* Heading */}
+          <div className="mx-auto max-w-4xl text-center">
+
+            <span className="rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold uppercase tracking-widest text-violet-100">
+              Start Your Journey
+            </span>
+
+            <h2 className="mt-8 text-5xl font-extrabold leading-tight md:text-6xl">
+              Join the
+              <span className="block bg-gradient-to-r from-white via-violet-200 to-blue-200 bg-clip-text text-transparent">
+                NextGrid Ecosystem
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-violet-100">
+              NextGrid is more than a collection of brands—it's a growing
+              ecosystem driven by innovation, creativity, technology, and a
+              passion for delivering exceptional experiences. Whether you're
+              shopping for premium fashion, discovering new digital products,
+              or exploring our future ventures, every brand reflects our
+              commitment to quality and customer satisfaction.
+            </p>
+          </div>
+
+          {/* Features */}
+          <div className="mt-20 grid gap-8 md:grid-cols-3">
+
+            <div className="rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur-lg transition hover:bg-white/15">
+              <div className="text-5xl">🚀</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Innovation First
+              </h3>
+
+              <p className="mt-4 leading-8 text-violet-100">
+                Every NextGrid brand is designed with modern technology,
+                premium user experience, and continuous innovation at its core.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur-lg transition hover:bg-white/15">
+              <div className="text-5xl">⭐</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Premium Quality
+              </h3>
+
+              <p className="mt-4 leading-8 text-violet-100">
+                We carefully craft products and experiences that meet high
+                standards of quality, design, durability, and customer trust.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur-lg transition hover:bg-white/15">
+              <div className="text-5xl">🌍</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Global Vision
+              </h3>
+
+              <p className="mt-4 leading-8 text-violet-100">
+                Our mission is to build brands that inspire people around the
+                world while creating long-term value through sustainable growth.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Trust Stats */}
+          <div className="mt-20 grid grid-cols-2 gap-6 rounded-[32px] border border-white/10 bg-white/10 p-10 backdrop-blur-lg md:grid-cols-4">
+
+            <div className="text-center">
+              <h3 className="text-5xl font-bold">5+</h3>
+              <p className="mt-3 text-violet-100">
+                Growing Brands
+              </p>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-5xl font-bold">100%</h3>
+              <p className="mt-3 text-violet-100">
+                Customer Focus
+              </p>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-5xl font-bold">24/7</h3>
+              <p className="mt-3 text-violet-100">
+                Dedicated Support
+              </p>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-5xl font-bold">∞</h3>
+              <p className="mt-3 text-violet-100">
+                Future Possibilities
+              </p>
+            </div>
+
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="mt-20 flex flex-col items-center justify-center gap-5 sm:flex-row">
+
+            <Link
+              href="/nextgrid-style"
+              className="inline-flex items-center rounded-2xl bg-white px-10 py-5 text-lg font-bold text-violet-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              Explore Our Brands →
+            </Link>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center rounded-2xl border border-white/30 px-10 py-5 text-lg font-semibold text-white transition-all duration-300 hover:bg-white hover:text-violet-700"
+            >
+              Learn About NextGrid Style
+            </Link>
+
+          </div>
+
+          {/* Footer Note */}
+          <div className="mx-auto mt-16 max-w-4xl text-center">
+            <p className="text-lg leading-8 text-violet-100">
+              The journey has only just begun. As our ecosystem continues to
+              expand, we'll introduce new brands, innovative products, and
+              transformative digital experiences that empower customers,
+              creators, and businesses around the world. Join us as we shape
+              the future—one brand at a time.
+            </p>
+          </div>
+
         </div>
       </section>
     </main>
