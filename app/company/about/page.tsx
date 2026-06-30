@@ -756,6 +756,184 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+      {/* NextGrid Nexus */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950 py-28 text-white">
+
+        {/* Background Effects */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute left-0 top-20 h-80 w-80 rounded-full bg-violet-500/20 blur-3xl" />
+          <div className="absolute right-0 bottom-20 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6">
+
+          {/* Header */}
+          <div className="mx-auto max-w-4xl text-center">
+
+            <span className="rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-violet-300">
+              NextGrid Innovation
+            </span>
+
+            <h2 className="mt-8 text-5xl font-extrabold leading-tight md:text-6xl">
+              NextGrid Nexus
+            </h2>
+
+            <p className="mt-4 text-2xl font-medium text-violet-200">
+              Building the Future of Fashion Technology
+            </p>
+
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300">
+              <span className="font-semibold text-white">
+                NextGrid Nexus
+              </span>{" "}
+              is an innovative Fashion Technology ecosystem dedicated to
+              transforming the future of fashion through Artificial Intelligence,
+              Digital Fashion, Smart Fabrics, Wearable Technology, immersive
+              digital experiences, sustainable innovation, and next-generation
+              commerce. We combine technology, creativity, and design to build
+              intelligent solutions that empower brands, creators, businesses,
+              and consumers worldwide.
+            </p>
+
+          </div>
+
+          {/* Technology Grid */}
+          <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-lg transition hover:-translate-y-2 hover:border-violet-400/40 hover:bg-white/10">
+              <div className="text-5xl">🤖</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Artificial Intelligence
+              </h3>
+
+              <p className="mt-4 leading-8 text-slate-300">
+                AI-powered fashion design, intelligent recommendations,
+                predictive analytics, personalization, and automated creative
+                workflows that redefine how fashion is created and experienced.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-lg transition hover:-translate-y-2 hover:border-cyan-400/40 hover:bg-white/10">
+              <div className="text-5xl">👕</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Digital Fashion
+              </h3>
+
+              <p className="mt-4 leading-8 text-slate-300">
+                Creating virtual apparel, digital collections, and immersive
+                fashion experiences that seamlessly connect physical and digital
+                worlds.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-lg transition hover:-translate-y-2 hover:border-emerald-400/40 hover:bg-white/10">
+              <div className="text-5xl">🧵</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Smart Fabrics
+              </h3>
+
+              <p className="mt-4 leading-8 text-slate-300">
+                Exploring intelligent textiles that integrate sensors,
+                connectivity, performance materials, and sustainability into
+                everyday fashion.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-lg transition hover:-translate-y-2 hover:border-pink-400/40 hover:bg-white/10">
+              <div className="text-5xl">⌚</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Wearable Technology
+              </h3>
+
+              <p className="mt-4 leading-8 text-slate-300">
+                Bridging fashion with connected devices to create smarter,
+                healthier, and more interactive lifestyles.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-lg transition hover:-translate-y-2 hover:border-yellow-400/40 hover:bg-white/10">
+              <div className="text-5xl">🥽</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Immersive Experiences
+              </h3>
+
+              <p className="mt-4 leading-8 text-slate-300">
+                Building AR, VR, and mixed reality experiences that transform
+                shopping, storytelling, virtual runways, and customer
+                engagement.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-lg transition hover:-translate-y-2 hover:border-green-400/40 hover:bg-white/10">
+              <div className="text-5xl">🌱</div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                Sustainable Innovation
+              </h3>
+
+              <p className="mt-4 leading-8 text-slate-300">
+                Driving responsible fashion through circular design,
+                environmentally conscious materials, ethical production, and
+                technology that supports a more sustainable future.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Vision Statement */}
+          <div className="mt-24 rounded-[40px] border border-violet-400/20 bg-white/5 p-12 text-center backdrop-blur-lg">
+
+            <h3 className="text-4xl font-bold">
+              Our Vision
+            </h3>
+
+            <p className="mx-auto mt-6 max-w-4xl text-lg leading-9 text-slate-300">
+              At NextGrid Nexus, we envision a future where fashion and
+              technology evolve together to create intelligent, inclusive, and
+              sustainable experiences. By embracing emerging technologies,
+              fostering innovation, and collaborating across industries, we are
+              shaping the next generation of fashion for creators, businesses,
+              and consumers across the globe.
+            </p>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+
+              <span className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold">
+                AI Innovation
+              </span>
+
+              <span className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold">
+                Digital Fashion
+              </span>
+
+              <span className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold">
+                Wearables
+              </span>
+
+              <span className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold">
+                Smart Textiles
+              </span>
+
+              <span className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold">
+                AR / VR
+              </span>
+
+              <span className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold">
+                Sustainability
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
     </main>
   );
 }
