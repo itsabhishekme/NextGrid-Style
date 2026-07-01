@@ -190,35 +190,6 @@ export default async function Home() {
 
       </section>
 
-      {/* Statistics */}
-      <section className="border-y border-white/10 py-24">
-
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 text-center md:grid-cols-4">
-
-          <div>
-            <h3 className="text-6xl font-black">50K+</h3>
-            <p className="mt-3 text-white/60">Customers</p>
-          </div>
-
-          <div>
-            <h3 className="text-6xl font-black">120+</h3>
-            <p className="mt-3 text-white/60">Collections</p>
-          </div>
-
-          <div>
-            <h3 className="text-6xl font-black">35+</h3>
-            <p className="mt-3 text-white/60">Countries</p>
-          </div>
-
-          <div>
-            <h3 className="text-6xl font-black">15+</h3>
-            <p className="mt-3 text-white/60">Awards</p>
-          </div>
-
-        </div>
-
-      </section>
-
       {/* Newsletter */}
       <section className="mx-auto max-w-4xl px-6 py-24 text-center">
 
