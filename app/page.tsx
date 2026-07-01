@@ -190,34 +190,6 @@ export default async function Home() {
 
       </section>
 
-      {/* Newsletter */}
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
-
-        <h2 className="text-6xl font-black">
-          JOIN OUR WORLD
-        </h2>
-
-        <p className="mx-auto mt-6 max-w-xl text-white/60">
-          Subscribe for exclusive launches,
-          premium collections and member-only access.
-        </p>
-
-        <div className="mt-10 flex flex-col gap-4 md:flex-row">
-
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="h-16 flex-1 rounded-full border border-white/10 bg-white/5 px-8 outline-none"
-          />
-
-          <button className="h-16 rounded-full bg-white px-10 font-bold text-black">
-            SUBSCRIBE
-          </button>
-
-        </div>
-
-      </section>
-
     </main>
   );
 }
