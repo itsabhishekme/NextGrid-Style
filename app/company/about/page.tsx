@@ -12,7 +12,6 @@ import {
   ShieldCheck,
   Globe,
   Truck,
-  Star,
   ShoppingBag,
   Gem,
   Layers3,

@@ -136,7 +136,7 @@ export default function CompanyAbout() {
       <section className="border-b bg-gradient-to-br from-slate-950 via-slate-900 to-black py-24 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-5 py-2 text-sm font-semibold text-violet-300">
-            About NextGrid
+            About NextGrid Style
           </span>
 
           <h1 className="mt-8 text-5xl font-extrabold md:text-7xl">
