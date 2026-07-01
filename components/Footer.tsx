@@ -10,7 +10,6 @@ import {
   Mail,
   MapPin,
   Phone,
-  CreditCard,
   ShieldCheck,
   Truck,
   Headphones,
@@ -20,7 +19,6 @@ import {
   ChevronRight,
   Star,
   BadgeCheck,
-  ExternalLink,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -164,61 +162,6 @@ export default function Footer() {
           "
         />
       </div>
-
-      {/* TOP TAGS */}
-      <section
-        className="
-          relative
-          z-10
-          border-b
-          border-white/10
-        "
-      >
-        <div
-          className="
-            mx-auto
-            flex
-            max-w-7xl
-            flex-wrap
-            items-center
-            justify-center
-            gap-4
-            px-4
-            py-5
-          "
-        >
-          {[
-            "Premium Fashion",
-            "Luxury Streetwear",
-            "Secure Checkout",
-            "Express Delivery",
-            "Exclusive Collections",
-            "Worldwide Shipping",
-            "Luxury Experiences",
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -2 }}
-              className="
-                rounded-full
-                border
-                border-white/10
-                bg-white/[0.04]
-                px-5
-                py-3
-                text-sm
-                text-zinc-300
-                backdrop-blur-xl
-              "
-            >
-              <div className="flex items-center gap-2">
-                <Star size={14} />
-                {item}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* FEATURES */}
       <section
